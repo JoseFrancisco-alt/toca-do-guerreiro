@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <path id="top" d="M100,100 m-72,0 a72,72 0 1,1 144,0"/>
+    <path id="bot" d="M100,100 m-80,0 a80,80 0 0,0 160,0"/>
+  </defs>
+  <circle cx="100" cy="100" r="98" fill="#0a0a0b"/>
+  <circle cx="100" cy="100" r="92" fill="#fff"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#0a0a0b" stroke-width="3"/>
+  <text font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="19" fill="#0a0a0b" letter-spacing="1.5">
+    <textPath href="#top" startOffset="50%" text-anchor="middle">TOCA DO GUERREIRO</textPath>
+  </text>
+  <text font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="19" fill="#0a0a0b" letter-spacing="2">
+    <textPath href="#bot" startOffset="50%" text-anchor="middle" dominant-baseline="hanging">JIU-JITSU</textPath>
+  </text>
+  <circle cx="100" cy="100" r="56" fill="#0a0a0b"/>
+  <path d="M100 44 A56 56 0 0 1 100 156 Z" fill="#e3141b"/>
+  <rect x="70" y="66" width="44" height="13" fill="#fff"/>
+  <rect x="85" y="66" width="13" height="66" fill="#fff"/>
+  <path d="M106 92 h32 v13 h-19 v14 h-13 z" fill="#0a0a0b"/>
+  <circle cx="100" cy="100" r="56" fill="none" stroke="#fff" stroke-width="3"/>
+</svg>

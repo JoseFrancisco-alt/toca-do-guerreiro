@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Toca do Guerreiro · Jiu-Jitsu</title>
+  <meta name="description" content="Agende sua aula experimental grátis de Jiu-Jitsu na Toca do Guerreiro — Cruzeiro e Santa Lúcia.">
+  <meta name="theme-color" content="#0a0a0b">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <img src="img/logo.svg" alt="" class="loader-logo">
+      <div class="loader-word"><span>O</span><span>S</span><span>S</span></div>
+      <div class="loader-bar"><i id="loaderFill"></i></div>
+      <div class="loader-count mono"><span id="loaderNum">000</span> / 100</div>
+    </div>
+  </div>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"><span id="cursorLabel"></span></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="#topo" class="nav-brand" data-cursor="Topo">
+      <img src="img/logo.svg" alt="Toca do Guerreiro">
+      <span>TOCA DO<br>GUERREIRO</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#modalidades">Modalidades</a>
+      <a href="#unidades">Unidades</a>
+      <a href="#automacao">Como funciona</a>
+      <a href="custos.html" class="nav-proposta">Proposta &amp; custos</a>
+    </nav>
+    <a href="#agendar" class="btn btn-red magnetic" data-cursor="Bora">Aula grátis</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><i></i><i></i></button>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#modalidades">Modalidades</a>
+    <a href="#unidades">Unidades</a>
+    <a href="#agendar">Agendar</a>
+    <a href="#automacao">Como funciona</a>
+    <a href="custos.html">Proposta &amp; custos</a>
+  </div>
+
+  <main id="topo">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="hero-ring"></span>
+        <span class="hero-ring r2"></span>
+        <img src="img/logo.svg" alt="" class="hero-emblem" id="heroEmblem">
+      </div>
+      <p class="hero-kicker mono reveal"><span class="dot"></span> Matrículas abertas · Cruzeiro &amp; Santa Lúcia</p>
+      <h1 class="hero-title">
+        <span class="line"><span>TOCA</span></span>
+        <span class="line"><span class="outline">DO</span> <span class="red">GUER</span></span>
+        <span class="line"><span class="red">REIRO</span></span>
+      </h1>
+      <div class="hero-foot">
+        <p class="hero-sub reveal">Jiu-Jitsu pra criança, pra mulher, pra quem nunca pisou num tatame.
+          <strong>Sua primeira aula é por nossa conta.</strong></p>
+        <div class="hero-ctas reveal">
+          <a href="#agendar" class="btn btn-red btn-lg magnetic" data-cursor="Agendar">Agendar aula experimental <b>→</b></a>
+          <a href="#modalidades" class="btn btn-ghost magnetic" data-cursor="Ver">Ver modalidades</a>
+        </div>
+      </div>
+      <div class="hero-scroll mono">role <i></i></div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>OSS</span><em>✦</em><span>Disciplina</span><em>✦</em><span>Respeito</span><em>✦</em><span>Técnica</span><em>✦</em><span>Família</span><em>✦</em>
+        <span>OSS</span><em>✦</em><span>Disciplina</span><em>✦</em><span>Respeito</span><em>✦</em><span>Técnica</span><em>✦</em><span>Família</span><em>✦</em>
+      </div>
+    </div>
+
+    <!-- NÚMEROS -->
+    <section class="stats">
+      <div class="stat reveal"><b data-count="5">0</b><span>unidades na cidade</span></div>
+      <div class="stat reveal"><b data-count="3">0</b><span>modalidades: kids, feminino, adulto</span></div>
+      <div class="stat reveal"><b data-count="3" data-suffix="º">0</b><span>lugar por equipes no campeonato</span></div>
+      <div class="stat reveal"><b>1ª</b><span>aula experimental grátis</span></div>
+    </section>
+
+    <!-- MODALIDADES -->
+    <section class="section" id="modalidades">
+      <div class="section-head">
+        <span class="mono tag">01 — Modalidades</span>
+        <h2 class="reveal">Um tatame.<br><span class="red">Três turmas.</span></h2>
+      </div>
+      <div class="cards">
+        <article class="card tilt reveal" data-cursor="Kids">
+          <div class="card-num mono">K/01</div>
+          <div class="card-art art-kids" aria-hidden="true"><span>KIDS</span></div>
+          <h3>Infantil / Kids</h3>
+          <p>Coordenação, foco e confiança. Criança que aprende a cair aprende a levantar — dentro e fora do tatame.</p>
+          <a href="#agendar" class="card-link" data-mod="kids">Agendar Kids →</a>
+        </article>
+        <article class="card tilt reveal" data-cursor="Elas">
+          <div class="card-num mono">F/02</div>
+          <div class="card-art art-fem" aria-hidden="true"><span>ELAS</span></div>
+          <h3>Turma Feminina</h3>
+          <p>Ambiente só de mulheres, ritmo respeitado e defesa pessoal de verdade. Chega sozinha, sai com um time.</p>
+          <a href="#agendar" class="card-link" data-mod="feminino">Agendar Feminino →</a>
+        </article>
+        <article class="card tilt reveal" data-cursor="Adulto">
+          <div class="card-num mono">A/03</div>
+          <div class="card-art art-adu" aria-hidden="true"><span>ADULTO</span></div>
+          <h3>Adulto</h3>
+          <p>Do iniciante ao competidor. Condicionamento, técnica e aquela cabeça leve depois do treino.</p>
+          <a href="#agendar" class="card-link" data-mod="adulto">Agendar Adulto →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- AGENDAMENTO -->
+    <section class="section booking" id="agendar">
+      <div class="section-head">
+        <span class="mono tag">02 — Aula experimental</span>
+        <h2 class="reveal">Agende em <span class="red">3 toques.</span></h2>
+        <p class="lead reveal">Escolha a unidade, a turma e o horário. A confirmação chega no seu WhatsApp na hora.</p>
+      </div>
+
+      <div class="wizard reveal" id="wizard">
+        <ol class="steps mono" id="steps">
+          <li class="active" data-step="1"><b>1</b> Unidade</li>
+          <li data-step="2"><b>2</b> Modalidade</li>
+          <li data-step="3"><b>3</b> Dia &amp; hora</li>
+          <li data-step="4"><b>4</b> Seus dados</li>
+        </ol>
+        <div class="origin mono" id="origin" hidden></div>
+
+        <!-- passo 1 -->
+        <div class="panel active" data-panel="1">
+          <h3>Onde você quer treinar?</h3>
+          <div class="choices two">
+            <button class="choice" data-unit="cruzeiro">
+              <span class="choice-tag mono">Piloto</span>
+              <strong>Cruzeiro</strong>
+              <small>CT Cruzeiro · @tocactcruzeiro</small>
+            </button>
+            <button class="choice" data-unit="santalucia">
+              <span class="choice-tag mono">Piloto</span>
+              <strong>Santa Lúcia</strong>
+              <small>Filial Santa Lúcia</small>
+            </button>
+          </div>
+          <p class="soon mono">Em breve: Matriz Graciliano Ramos · Aeroporto · Santa Amélia</p>
+        </div>
+
+        <!-- passo 2 -->
+        <div class="panel" data-panel="2">
+          <h3>Qual turma?</h3>
+          <div class="choices three">
+            <button class="choice" data-mod="kids"><span class="choice-ico">🥋</span><strong>Kids</strong><small>4 a 13 anos</small></button>
+            <button class="choice" data-mod="feminino"><span class="choice-ico">✦</span><strong>Feminino</strong><small>Só mulheres</small></button>
+            <button class="choice" data-mod="adulto"><span class="choice-ico">⚡</span><strong>Adulto</strong><small>A partir de 14 anos</small></button>
+          </div>
+          <button class="back mono" data-back>← voltar</button>
+        </div>
+
+        <!-- passo 3 -->
+        <div class="panel" data-panel="3">
+          <h3>Escolha o dia</h3>
+          <div class="days" id="days"></div>
+          <h3 class="mt">Horários livres</h3>
+          <div class="slots" id="slots"><p class="hint">Selecione um dia acima.</p></div>
+          <button class="back mono" data-back>← voltar</button>
+        </div>
+
+        <!-- passo 4 -->
+        <div class="panel" data-panel="4">
+          <h3>Quase lá</h3>
+          <div class="summary" id="summary"></div>
+          <form class="form" id="form" novalidate>
+            <label><span class="mono">Nome</span><input name="nome" required placeholder="Seu nome completo" autocomplete="name"></label>
+            <label><span class="mono">WhatsApp</span><input name="zap" required placeholder="(82) 9 9999-9999" inputmode="tel" autocomplete="tel"></label>
+            <label class="kid-only" hidden><span class="mono">Nome da criança</span><input name="crianca" placeholder="Quem vai treinar?"></label>
+            <button type="submit" class="btn btn-red btn-lg magnetic">Confirmar aula grátis <b>→</b></button>
+          </form>
+          <button class="back mono" data-back>← voltar</button>
+        </div>
+
+        <!-- sucesso -->
+        <div class="panel" data-panel="5">
+          <div class="done">
+            <div class="done-check">✓</div>
+            <h3>Aula marcada. <span class="red">OSS!</span></h3>
+            <p id="doneText"></p>
+            <p class="mono small">Protótipo: nenhuma mensagem real é enviada. Veja abaixo o que o aluno e a recepção recebem.</p>
+            <div class="done-ctas">
+              <a href="#automacao" class="btn btn-red">Ver mensagens →</a>
+              <button class="btn btn-ghost" id="restart">Novo agendamento</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTOMAÇÃO WHATSAPP -->
+    <section class="section auto" id="automacao">
+      <div class="section-head">
+        <span class="mono tag">03 — Automação WhatsApp</span>
+        <h2 class="reveal">Ninguém <span class="red">esquece</span><br>a primeira aula.</h2>
+        <p class="lead reveal">Quatro mensagens automáticas. Zero trabalho manual da recepção.</p>
+      </div>
+      <div class="auto-grid">
+        <div class="phone reveal" data-cursor="Aluno">
+          <div class="phone-top"><span class="avatar"><img src="img/logo.svg" alt=""></span><div><b>Toca do Guerreiro</b><small>conta comercial ✓</small></div></div>
+          <div class="chat" id="chatAluno"></div>
+        </div>
+        <ul class="timeline">
+          <li class="reveal"><span class="t mono">00:00</span><div><b>Confirmação imediata</b><p>Dia, hora, endereço e o que levar. Assim que o aluno toca em “confirmar”.</p></div></li>
+          <li class="reveal"><span class="t mono">−24h</span><div><b>Lembrete de véspera</b><p>Com botão “confirmo presença” ou “quero remarcar”.</p></div></li>
+          <li class="reveal"><span class="t mono">−2h</span><div><b>Lembrete final</b><p>Link do Google Maps da unidade. Diminui falta.</p></div></li>
+          <li class="reveal"><span class="t mono">→ rec.</span><div><b>Aviso pra recepção</b><p>Nome, turma, horário e de onde veio o aluno (QR do balcão, aulão, Instagram).</p></div></li>
+        </ul>
+        <div class="phone phone-rec reveal" data-cursor="Recepção">
+          <div class="phone-top"><span class="avatar rec">R</span><div><b>Recepção · Cruzeiro</b><small>grupo interno</small></div></div>
+          <div class="chat" id="chatRec"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QR -->
+    <section class="section qr" id="captacao">
+      <div class="section-head">
+        <span class="mono tag">04 — Captação</span>
+        <h2 class="reveal">Do panfleto<br><span class="red">pro tatame.</span></h2>
+        <p class="lead reveal">Cada QR Code leva pro mesmo agendamento, mas com etiqueta de origem. A academia sabe de onde vem cada aluno.</p>
+      </div>
+      <div class="qr-grid">
+        <div class="qr-card reveal tilt" data-cursor="Balcão">
+          <div class="qr-mock counter">
+            <span class="mono">Aponte a câmera</span>
+            <div class="qr-box" data-qr="balcao"></div>
+            <b>AULA GRÁTIS</b>
+          </div>
+          <h3>Display de balcão</h3>
+          <p>Acrílico na recepção das unidades. Quem passa na porta agenda sozinho.</p>
+          <code class="mono">?origem=balcao</code>
+        </div>
+        <div class="qr-card reveal tilt" data-cursor="Aulão">
+          <div class="qr-mock banner">
+            <b>AULÃO NA PRAÇA</b>
+            <div class="qr-box" data-qr="aulao"></div>
+            <span class="mono">Toca do Guerreiro · Jiu-Jitsu</span>
+          </div>
+          <h3>Banner &amp; panfleto</h3>
+          <p>Eventos e aulões de rua em praças públicas. Interesse vira agendamento na hora.</p>
+          <code class="mono">?origem=aulao</code>
+        </div>
+        <div class="qr-card reveal tilt" data-cursor="Insta">
+          <div class="qr-mock insta">
+            <div class="insta-head"><img src="img/logo.svg" alt=""><div><b>tocadoguerreirobjj</b><small>Arte</small></div></div>
+            <p>🥋 Agende sua Aula Experimental Grátis<br>no Cruzeiro ou Santa Lúcia 👇</p>
+            <span class="insta-link">🔗 tocadoguerreiro.com.br</span>
+          </div>
+          <h3>Link na bio</h3>
+          <p>Troca a conversa genérica no WhatsApp por uma chamada direta pro agendamento.</p>
+          <code class="mono">?origem=instagram</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- UNIDADES -->
+    <section class="section" id="unidades">
+      <div class="section-head">
+        <span class="mono tag">05 — Unidades</span>
+        <h2 class="reveal">Começa em duas.<br><span class="red">Chega em cinco.</span></h2>
+      </div>
+      <ul class="units">
+        <li class="unit live reveal" data-cursor="Piloto"><span class="mono">Fase 1</span><b>Cruzeiro</b><em>Piloto</em></li>
+        <li class="unit live reveal" data-cursor="Piloto"><span class="mono">Fase 1</span><b>Santa Lúcia</b><em>Piloto</em></li>
+        <li class="unit reveal"><span class="mono">Fase 3</span><b>Matriz · Graciliano Ramos</b><em>Em breve</em></li>
+        <li class="unit reveal"><span class="mono">Fase 3</span><b>Aeroporto</b><em>Em breve</em></li>
+        <li class="unit reveal"><span class="mono">Fase 3</span><b>Santa Amélia</b><em>Em breve</em></li>
+      </ul>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="final">
+      <h2 class="reveal">O primeiro passo<br>é <span class="red">entrar na Toca.</span></h2>
+      <a href="#agendar" class="btn btn-red btn-xl magnetic" data-cursor="OSS">Agendar aula grátis <b>→</b></a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand"><img src="img/logo.svg" alt=""><span>TOCA DO GUERREIRO<br><small class="mono">Jiu-Jitsu · Prof. Augusto Teodósio</small></span></div>
+    <div class="footer-links mono">
+      <a href="https://instagram.com/tocadoguerreirobjj" target="_blank" rel="noopener">@tocadoguerreirobjj</a>
+      <a href="https://instagram.com/tocactcruzeiro" target="_blank" rel="noopener">@tocactcruzeiro</a>
+      <a href="custos.html">Proposta &amp; custos</a>
+    </div>
+    <p class="mono small">Protótipo visual · horários e endereços ilustrativos</p>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
