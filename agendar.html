@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aula Grátis · Toca do Guerreiro</title>
+  <meta name="description" content="Agende sua aula experimental grátis de Jiu-Jitsu no Cruzeiro ou Santa Lúcia.">
+  <meta name="theme-color" content="#0a0a0b">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-book">
+  <div class="cursor" id="cursor"><span id="cursorLabel"></span></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav scrolled book-nav">
+    <a href="index.html" class="nav-brand" data-cursor="Início">
+      <img src="img/logo.svg" alt="Toca do Guerreiro">
+      <span>TOCA DO<br>GUERREIRO</span>
+    </a>
+    <a href="index.html" class="mono back-home">← conhecer a academia</a>
+  </header>
+
+  <main class="book">
+    <aside class="book-side">
+      <img src="img/logo.svg" alt="" class="book-emblem" aria-hidden="true">
+      <span class="mono tag">Aula experimental</span>
+      <h1>Sua primeira<br>aula é <span class="red">grátis.</span></h1>
+      <ul class="perks">
+        <li><b>✓</b> Sem compromisso, sem cartão</li>
+        <li><b>✓</b> Kimono emprestado na primeira aula</li>
+        <li><b>✓</b> Confirmação na hora pelo WhatsApp</li>
+        <li><b>✓</b> Lembrete antes da aula, pra você não esquecer</li>
+      </ul>
+      <div class="origin mono" id="origin" hidden></div>
+    </aside>
+
+    <section class="book-main">
+      <div class="wizard" id="wizard">
+        <ol class="steps mono" id="steps">
+          <li class="active" data-step="1"><b>1</b> Unidade</li>
+          <li data-step="2"><b>2</b> Turma</li>
+          <li data-step="3"><b>3</b> Dia &amp; hora</li>
+          <li data-step="4"><b>4</b> Seus dados</li>
+        </ol>
+        <div class="progress"><i id="progress"></i></div>
+
+        <div class="panel active" data-panel="1">
+          <h3>Onde você quer treinar?</h3>
+          <div class="choices two">
+            <button class="choice" data-unit="cruzeiro" data-cursor="Cruzeiro">
+              <span class="choice-ico">📍</span>
+              <strong>Cruzeiro</strong>
+              <small>CT Cruzeiro · @tocactcruzeiro</small>
+            </button>
+            <button class="choice" data-unit="santalucia" data-cursor="S. Lúcia">
+              <span class="choice-ico">📍</span>
+              <strong>Santa Lúcia</strong>
+              <small>Filial Santa Lúcia</small>
+            </button>
+          </div>
+          <p class="soon mono">Matriz Graciliano Ramos, Aeroporto e Santa Amélia: agendamento online em breve.</p>
+        </div>
+
+        <div class="panel" data-panel="2">
+          <h3>Qual turma?</h3>
+          <div class="choices three">
+            <button class="choice" data-mod="kids"><span class="choice-ico">🥋</span><strong>Kids</strong><small>4 a 13 anos</small></button>
+            <button class="choice" data-mod="feminino"><span class="choice-ico">✦</span><strong>Feminina</strong><small>Só mulheres</small></button>
+            <button class="choice" data-mod="adulto"><span class="choice-ico">⚡</span><strong>Adulto</strong><small>A partir de 14 anos</small></button>
+          </div>
+          <button class="back mono" data-back>← voltar</button>
+        </div>
+
+        <div class="panel" data-panel="3">
+          <h3>Escolha o dia</h3>
+          <div class="days" id="days"></div>
+          <h3 class="mt">Horários livres</h3>
+          <div class="slots" id="slots"><p class="hint">Selecione um dia acima.</p></div>
+          <button class="back mono" data-back>← voltar</button>
+        </div>
+
+        <div class="panel" data-panel="4">
+          <h3>Quase lá</h3>
+          <div class="summary" id="summary"></div>
+          <form class="form" id="form" novalidate>
+            <label><span class="mono">Seu nome</span><input name="nome" required placeholder="Nome completo" autocomplete="name"></label>
+            <label><span class="mono">WhatsApp</span><input name="zap" required placeholder="(82) 9 9999-9999" inputmode="tel" autocomplete="tel"></label>
+            <label class="kid-only" hidden><span class="mono">Nome e idade da criança</span><input name="crianca" placeholder="Ex.: Pedro, 7 anos"></label>
+            <button type="submit" class="btn btn-red btn-lg magnetic">Confirmar aula grátis <b>→</b></button>
+            <p class="mono small">Usamos seu WhatsApp só pra confirmar e lembrar da aula.</p>
+          </form>
+          <button class="back mono" data-back>← voltar</button>
+        </div>
+
+        <div class="panel" data-panel="5">
+          <div class="done">
+            <div class="done-check">✓</div>
+            <h3>Aula marcada. <span class="red">OSS!</span></h3>
+            <p id="doneText"></p>
+            <div class="done-ctas">
+              <a href="#" class="btn btn-red" id="calBtn">Salvar na agenda</a>
+              <a href="index.html" class="btn btn-ghost">Conhecer a Toca</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone mini" id="phonePreview" hidden>
+        <div class="phone-top"><span class="avatar"><img src="img/logo.svg" alt=""></span><div><b>Toca do Guerreiro</b><small>conta comercial ✓</small></div></div>
+        <div class="chat" id="chatAluno"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+  <script src="agenda.js"></script>
+</body>
+</html>
