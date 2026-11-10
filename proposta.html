@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proposta Comercial · Toca do Guerreiro · José Francisco</title>
+  <link rel="icon" href="img/jf-logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="proposta.css">
+  <script>
+    /* ====== EDITE AQUI e gere o PDF de novo (veja o README) ====== */
+    window.PROP = {
+      numero: '001/2026',
+      data: '10 de novembro de 2026',
+      validade: '15 dias',
+      autor: 'José Francisco',
+      cargo: 'Desenvolvimento Web & Automação',
+      contato: '',                 // ex.: 'WhatsApp (82) 9 9999-9999 · seuemail@gmail.com' — vazio = não aparece
+      implantacao: 1800,           // R$ — piloto Cruzeiro + Santa Lúcia
+      manutencao: 190,             // R$/mês
+      porUnidade: 300,             // R$ — cada unidade nova na Fase 3
+      dominioProprio: 450          // R$ — site institucional completo no domínio (Fase 3)
+    };
+  </script>
+</head>
+<body>
+
+<!-- 01 CAPA -->
+<section class="page cover dark">
+  <header class="cv-top">
+    <div class="me"><img src="img/jf-logo.svg" alt=""><div><b data-p="autor"></b><small data-p="cargo"></small></div></div>
+    <span class="mono">Proposta comercial · nº <span data-p="numero"></span></span>
+  </header>
+  <img src="img/logo.svg" alt="" class="cv-emblem">
+  <div class="cv-main">
+    <span class="mono tag">Para Toca do Guerreiro Jiu-Jitsu</span>
+    <h1>Do Insta<br>pro <span class="red">tatame.</span></h1>
+    <p class="lead">Site da academia, agendamento online da aula experimental grátis e WhatsApp automático — começando pelas unidades <b>Cruzeiro</b> e <b>Santa Lúcia</b>.</p>
+  </div>
+  <dl class="cv-meta">
+    <div><dt>Para</dt><dd>Prof. Augusto Teodósio<br><small>e sócios da Toca do Guerreiro</small></dd></div>
+    <div><dt>Preparado por</dt><dd><span data-p="autor"></span><br><small data-p="cargo"></small></dd></div>
+    <div><dt>Data</dt><dd data-p="data"></dd></div>
+    <div><dt>Validade</dt><dd data-p="validade"></dd></div>
+  </dl>
+</section>
+
+<!-- 02 APRESENTAÇÃO -->
+<section class="page">
+  <span class="mono tag">01 — Apresentação</span>
+  <h2>Oss, Prof. Augusto.</h2>
+  <div class="letter">
+    <p>A Toca já tem o que mais importa: tatame cheio, turma Kids no pódio, uma turma feminina e cinco unidades espalhadas pela cidade. No Instagram, são <b>mais de 3.400 seguidores</b> e <b>quase 700 posts</b> mostrando o dia a dia da academia.</p>
+    <p>O que falta é um caminho curto entre <b>“gostei desse post”</b> e <b>“tô no tatame”</b>. Hoje esse caminho passa por uma conversa solta no WhatsApp, que depende de alguém da recepção estar livre pra responder.</p>
+    <p>Esta proposta resolve isso com três peças que já existem como protótipo, prontas pra vocês testarem no celular: um <b>site com a cara da Toca</b>, uma <b>página de agendamento</b> e <b>mensagens automáticas no WhatsApp</b>.</p>
+  </div>
+  <div class="tldr">
+    <div><span class="mono">O quê</span><b>Agendamento em 1 minuto</b><p>O interessado escolhe unidade, turma e horário sozinho — de dia ou de madrugada.</p></div>
+    <div><span class="mono">Por quê</span><b>Menos aluno perdido</b><p>Resposta na hora e lembrete antes da aula. Menos “oi, sumi” e menos falta na experimental.</p></div>
+    <div><span class="mono">Quanto</span><b>A partir de <span class="red" data-money="implantacao"></span></b><p>Implantação do piloto + <span data-money="manutencao"></span>/mês de manutenção. Infraestrutura ~R$ 30/mês.</p></div>
+  </div>
+  <div class="who">
+    <img src="img/jf-logo.svg" alt="">
+    <div><span class="mono tag">Quem faz</span><b>José Francisco</b><p>Crio sites sob medida, com animação e identidade própria, e automações que tiram trabalho repetido das costas de quem atende. Projeto recente: o site do estúdio de tatuagem <b>Manoel.ink</b>, com portfólio animado e pedido de orçamento direto no WhatsApp.</p></div>
+  </div>
+  <div class="facts">
+    <div><b>5</b><span>unidades</span></div>
+    <div><b>3</b><span>turmas</span></div>
+    <div><b>3.484</b><span>seguidores no Instagram</span></div>
+    <div><b>669</b><span>posts publicados</span></div>
+  </div>
+</section>
+
+<!-- 03 DIAGNÓSTICO -->
+<section class="page">
+  <span class="mono tag">02 — Como é hoje</span>
+  <h2>Onde o aluno <span class="red">se perde.</span></h2>
+  <p class="lead">O interesse existe. O problema é o caminho até a primeira aula.</p>
+  <div class="funnel">
+    <div class="f"><span class="mono">1</span><b>Vê o post</b><p>Gosta do treino, do pódio, da turma Kids.</p></div>
+    <div class="f"><span class="mono">2</span><b>Manda “oi” no WhatsApp</b><p>Conversa genérica, sem horário na mão.</p></div>
+    <div class="f leak"><span class="mono">3 · vazamento</span><b>Espera resposta</b><p>Se a recepção tá no tatame ou já fechou, a resposta demora. O interesse esfria.</p></div>
+    <div class="f leak"><span class="mono">4 · vazamento</span><b>Marca e esquece</b><p>Sem lembrete, a pessoa falta na aula experimental e não volta a chamar.</p></div>
+  </div>
+  <div class="split">
+    <div class="box">
+      <span class="mono tag">O que isso custa</span>
+      <ul class="dash">
+        <li>Interessados que chamam fora do horário e não voltam</li>
+        <li>Recepção respondendo as mesmas perguntas o dia inteiro</li>
+        <li>Falta na aula experimental sem ninguém perceber</li>
+        <li>Nenhum número: de onde vêm os alunos? quantos marcam? quantos vêm?</li>
+      </ul>
+    </div>
+    <div class="box red-box">
+      <span class="mono tag">A oportunidade</span>
+      <p class="big">Cada aluno novo que ficaria pelo caminho e passa a chegar no tatame paga o projeto inteiro em poucas mensalidades.</p>
+    </div>
+  </div>
+  <table class="vs">
+    <thead><tr><th></th><th>Hoje</th><th>Com o projeto</th></tr></thead>
+    <tbody>
+      <tr><td>Marcar a aula experimental</td><td>Conversa no WhatsApp, depende da recepção</td><td><b>Sozinho, em 1 minuto, 24h por dia</b></td></tr>
+      <tr><td>Confirmação</td><td>Quando alguém consegue responder</td><td><b>Na hora, automática</b></td></tr>
+      <tr><td>Falta na aula</td><td>Ninguém lembra a pessoa</td><td><b>Lembrete 24h e 2h antes</b></td></tr>
+      <tr><td>Recepção</td><td>Repete horários e endereço o dia todo</td><td><b>Recebe o aluno já agendado</b></td></tr>
+      <tr><td>Saber o que funciona</td><td>Achismo</td><td><b>Relatório por canal e por unidade</b></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 04 SOLUÇÃO -->
+<section class="page dark">
+  <span class="mono tag">03 — A solução</span>
+  <h2>Agendou,<br><span class="red">confirmou.</span></h2>
+  <figure class="shot big"><img src="img/shots/home-0.png" alt="Protótipo do site da Toca do Guerreiro"><figcaption class="mono">Protótipo — página inicial do site</figcaption></figure>
+  <div class="three">
+    <div><span class="mono">Peça 1</span><b>Site da Toca</b><p>Turmas, professores, horários, unidades e dúvidas. Tudo levando pra aula grátis.</p></div>
+    <div><span class="mono">Peça 2</span><b>Agendamento</b><p>Unidade → turma → dia e hora → nome e WhatsApp. É o link da bio e dos QR Codes.</p></div>
+    <div><span class="mono">Peça 3</span><b>WhatsApp automático</b><p>Confirmação, lembretes 24h e 2h antes e aviso à recepção.</p></div>
+  </div>
+  <div class="path">
+    <div><span>📱</span><b>Instagram, QR ou balcão</b></div><i>→</i>
+    <div><span>🗓</span><b>Agenda em 1 minuto</b></div><i>→</i>
+    <div><span>💬</span><b>Confirmação e lembretes</b></div><i>→</i>
+    <div class="hot"><span>🥋</span><b>No tatame</b></div>
+  </div>
+</section>
+
+<!-- 05 O SITE -->
+<section class="page">
+  <span class="mono tag">04 — Peça 1 · O site</span>
+  <h2>Com a <span class="red">cara da Toca.</span></h2>
+  <p class="lead">Feito sob medida, no preto e vermelho da marca, com animações que prendem quem entra — nada de modelo pronto.</p>
+  <div class="shots-grid">
+    <figure class="shot"><img src="img/shots/home-sobre.png" alt=""><figcaption class="mono">Manifesto: as palavras acendem conforme rola</figcaption></figure>
+    <figure class="shot"><img src="img/shots/home-professores.png" alt=""><figcaption class="mono">Professores: carrossel com faixa de cada um</figcaption></figure>
+    <figure class="shot"><img src="img/shots/home-modalidades.png" alt=""><figcaption class="mono">Turmas: Kids, Feminina e Adulto</figcaption></figure>
+    <figure class="shot"><img src="img/shots/home-horarios.png" alt=""><figcaption class="mono">Horários por unidade</figcaption></figure>
+  </div>
+  <div class="split tight">
+    <ul class="checks">
+      <li>Seções: a Toca, turmas, <b>professores</b>, conquistas, horários, depoimentos, unidades e dúvidas</li>
+      <li>Botão “Aula grátis” sempre à mão, no topo e flutuando</li>
+      <li>Feito primeiro pro celular — de onde vem quase todo acesso do Instagram</li>
+    </ul>
+    <figure class="shot phone-shot"><img src="img/shots/mob-0.png" alt=""></figure>
+  </div>
+</section>
+
+<!-- 06 AGENDAMENTO -->
+<section class="page">
+  <span class="mono tag">05 — Peça 2 · Agendamento</span>
+  <h2>Quatro toques<br>até o <span class="red">tatame.</span></h2>
+  <div class="steps4">
+    <div><b>1</b><span>Unidade</span><small>Cruzeiro ou Santa Lúcia</small></div>
+    <div><b>2</b><span>Turma</span><small>Kids, Feminina ou Adulto</small></div>
+    <div><b>3</b><span>Dia e hora</span><small>Só aparecem horários com vaga</small></div>
+    <div><b>4</b><span>Nome e WhatsApp</span><small>E pronto: confirmado</small></div>
+  </div>
+  <div class="split media">
+    <figure class="shot"><img src="img/shots/agendar-0.png" alt=""><figcaption class="mono">Computador — chegou pelo link da bio, já com unidade e turma escolhidas</figcaption></figure>
+    <figure class="shot phone-shot"><img src="img/shots/agmob-0.png" alt=""><figcaption class="mono">Celular — veio pelo QR do balcão</figcaption></figure>
+  </div>
+  <div class="nums">
+    <div><b>&lt; 1 min</b><span>pra agendar</span></div>
+    <div><b>24h</b><span>por dia, inclusive fim de semana</span></div>
+    <div><b>0</b><span>mensagens digitadas pela recepção</span></div>
+  </div>
+  <ul class="checks cols">
+    <li>Controle de vagas por horário: lotou, o horário some</li>
+    <li>Turma Kids pede o nome e a idade da criança</li>
+    <li>Cada agendamento guarda a <b>origem</b>: Instagram, balcão, aulão</li>
+    <li>Remarcar é com um toque, no próprio lembrete do WhatsApp</li>
+  </ul>
+</section>
+
+<!-- 07 WHATSAPP -->
+<section class="page dark">
+  <span class="mono tag">06 — Peça 3 · WhatsApp automático</span>
+  <h2>Ninguém esquece<br>a <span class="red">primeira aula.</span></h2>
+  <div class="wa">
+    <div class="wa-phone">
+      <div class="wa-top"><img src="img/logo.svg" alt=""><div><b>Toca do Guerreiro</b><small>o que o aluno recebe</small></div></div>
+      <div class="wa-chat">
+        <div class="bub"><i>Confirmação · na hora</i>Oss, Lucas! 🥋 Sua aula experimental grátis tá confirmada:<br><br>📍 Cruzeiro<br>🥋 Turma Adulto<br>🗓 quarta, 12/11 às 19:30<br><br>Leve roupa leve e água. Kimono a gente empresta.<time>14:02</time></div>
+        <div class="bub"><i>Lembrete · 24h antes</i>Lucas, amanhã é dia de tatame! 19:30 no Cruzeiro. Vai dar pra vir?<span class="wa-btns"><em>✅ Confirmo</em><em>🔁 Remarcar</em></span><time>19:30</time></div>
+        <div class="bub"><i>Lembrete · 2h antes</i>Faltam 2h! 🔥 Te esperamos às 19:30.<br>📍 Toque aqui pro mapa<time>17:30</time></div>
+      </div>
+    </div>
+    <ol class="wa-tl">
+      <li><span class="mono">na hora</span><b>Confirmação</b><p>Dia, hora, unidade e o que levar, assim que a pessoa confirma.</p></li>
+      <li><span class="mono">−24h</span><b>Lembrete de véspera</b><p>Com botões “confirmo” e “quero remarcar”.</p></li>
+      <li><span class="mono">−2h</span><b>Lembrete final</b><p>Com o mapa da unidade. Derruba a falta.</p></li>
+      <li><span class="mono">recepção</span><b>Aviso de novo aluno</b><p>Nome, turma, horário e de onde veio.</p></li>
+    </ol>
+    <div class="wa-phone small">
+      <div class="wa-top"><span class="r">R</span><div><b>Recepção · Cruzeiro</b><small>o que a recepção recebe</small></div></div>
+      <div class="wa-chat">
+        <div class="bub"><i>Novo aluno</i>🆕 Aula experimental agendada<br><br>👤 Lucas Andrade<br>🥋 Adulto · Cruzeiro<br>🗓 qua 12/11 · 19:30<br>📣 Origem: link da bio<time>14:02</time></div>
+        <div class="bub"><i>Presença</i>✅ Lucas confirmou presença pra amanhã às 19:30.<time>19:41</time></div>
+      </div>
+    </div>
+  </div>
+  <div class="split">
+    <div class="box dbox"><span class="mono tag">No tom da Toca</span><p>Os textos são escritos com vocês: “Oss”, nome do professor, endereço certinho de cada unidade. Horário dos lembretes ajustável.</p></div>
+    <div class="box dbox"><span class="mono tag">Pra depois (opcional)</span><p>Mensagem no dia seguinte à aula: “Curtiu o treino? Bora fechar a matrícula?” — o próximo passo natural do funil.</p></div>
+  </div>
+  <p class="note">Recomendado: API oficial do WhatsApp (Meta). Número verificado, sem risco de bloqueio, cobrança só por mensagem enviada (centavos).</p>
+</section>
+
+<!-- 08 CAPTAÇÃO -->
+<section class="page">
+  <span class="mono tag">07 — Captação</span>
+  <h2>Do panfleto<br><span class="red">pro tatame.</span></h2>
+  <p class="lead">Cada canal ganha um QR Code próprio. Todos levam pro mesmo agendamento — e a Toca passa a saber qual divulgação traz aluno.</p>
+  <div class="qrs">
+    <div class="qr-item"><div class="mock counter"><span class="mono">Aponte a câmera</span><div class="qr" data-qr="balcao"></div><b>AULA GRÁTIS</b></div><b>Display de balcão</b><p>Na recepção de cada unidade. Quem passa na porta agenda sozinho.</p></div>
+    <div class="qr-item"><div class="mock banner"><b>AULÃO NA PRAÇA</b><div class="qr" data-qr="aulao"></div><span class="mono">Toca do Guerreiro</span></div><b>Banner e panfleto</b><p>Aulões de rua e eventos. O interesse vira agendamento ali mesmo.</p></div>
+    <div class="qr-item"><div class="mock insta"><div class="ig"><img src="img/logo.svg" alt=""><div><b>tocadoguerreirobjj</b><small>Arte</small></div></div><p>🥋 Agende sua Aula Experimental Grátis no Cruzeiro ou Santa Lúcia 👇</p><span class="lnk">🔗 tocadoguerreiro.com.br/agendar</span></div><b>Link na bio</b><p>Troca a conversa genérica por uma chamada direta.</p></div>
+  </div>
+  <div class="kpis">
+    <span class="mono tag">Relatório mensal pra vocês</span>
+    <div><b>Agendamentos</b><span>por unidade e turma</span></div>
+    <div><b>Comparecimento</b><span>quantos vieram</span></div>
+    <div><b>Matrículas</b><span>quantos ficaram</span></div>
+    <div><b>Origem</b><span>Insta, balcão, aulão</span></div>
+  </div>
+</section>
+
+<!-- 09 FASES -->
+<section class="page">
+  <span class="mono tag">08 — Plano e prazos</span>
+  <h2>Três fases.</h2>
+  <div class="phases">
+    <div class="ph now"><span class="mono">Fase 1 · Piloto</span><b>Estrutura principal</b><small class="mono">semanas 1 a 3</small><ul><li>Site da Toca</li><li>Agendamento Cruzeiro e Santa Lúcia</li><li>Kids, Feminina e Adulto</li><li>Confirmação + lembretes 24h e 2h</li><li>Aviso automático à recepção</li></ul></div>
+    <div class="ph"><span class="mono">Fase 2 · Captação</span><b>Divulgação</b><small class="mono">semana 4</small><ul><li>QR exclusivo no balcão</li><li>QR em banners e panfletos</li><li>Nova chamada na bio</li><li>Primeiro relatório mensal</li></ul></div>
+    <div class="ph"><span class="mono">Fase 3 · Expansão</span><b>Todas as unidades</b><small class="mono">após os resultados</small><ul><li>Matriz Graciliano Ramos</li><li>Aeroporto</li><li>Santa Amélia</li><li>Domínio tocadoguerreiro.com.br</li></ul></div>
+  </div>
+  <table class="tl">
+    <thead><tr><th>Semana</th><th>Entrega</th><th>De vocês eu preciso</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">1</td><td>Site no ar em endereço de teste, com textos e fotos reais</td><td>Horários, fotos, nomes dos professores</td></tr>
+      <tr><td class="mono">2</td><td>Agendamento funcionando, com controle de vagas</td><td>Vagas por turma pra aula experimental</td></tr>
+      <tr><td class="mono">3</td><td>WhatsApp automático ligado + treinamento da recepção</td><td>Número de WhatsApp e verificação na Meta</td></tr>
+      <tr><td class="mono">4</td><td>QR Codes, artes do display, do banner e do panfleto</td><td>Aprovar as artes e mandar pra gráfica</td></tr>
+    </tbody>
+  </table>
+  <div class="split">
+    <div class="box"><span class="mono tag">Está incluso</span><ul class="dash"><li>Domínio e contas no nome da academia</li><li>Textos do site escritos com vocês</li><li>Artes do display, banner e panfleto</li><li>Treinamento da recepção</li></ul></div>
+    <div class="box"><span class="mono tag">Não está incluso</span><ul class="dash"><li>Ensaio fotográfico profissional</li><li>Impressão na gráfica</li><li>Anúncios pagos no Instagram</li><li>Custos de terceiros (domínio, WhatsApp)</li></ul></div>
+  </div>
+</section>
+
+<!-- 10 INVESTIMENTO -->
+<section class="page dark">
+  <span class="mono tag">09 — Investimento</span>
+  <h2>Quanto custa.</h2>
+  <div class="price-grid">
+    <div class="price main">
+      <span class="mono">Plano Piloto · Fases 1 e 2</span>
+      <b data-money="implantacao"></b>
+      <small>implantação, pago uma vez</small>
+      <ul><li>Site da Toca sob medida</li><li>Agendamento Cruzeiro + Santa Lúcia</li><li>WhatsApp automático (4 mensagens)</li><li>QR Codes e artes de divulgação</li><li>Treinamento da recepção</li></ul>
+      <p class="mono pay">50% na aprovação · 50% na entrega</p>
+    </div>
+    <div class="price">
+      <span class="mono">Manutenção</span>
+      <b><span data-money="manutencao"></span><em>/mês</em></b>
+      <small>a partir da entrega</small>
+      <ul><li>Ajuste de horários e turmas</li><li>Suporte pela recepção</li><li>Relatório mensal de agendamentos</li><li>Site e automações sempre no ar</li></ul>
+    </div>
+    <div class="price">
+      <span class="mono">Fase 3 · Expansão</span>
+      <b><span data-money="porUnidade"></span><em>/unidade</em></b>
+      <small>Matriz, Aeroporto e Santa Amélia</small>
+      <ul><li>Mesma estrutura do piloto</li><li>Horários e recepção de cada unidade</li><li>Domínio próprio: <span data-money="dominioProprio"></span> uma vez</li></ul>
+    </div>
+  </div>
+  <div class="split tight">
+    <div>
+      <span class="mono tag">Serviços pagos direto pela academia</span>
+      <table class="cost">
+        <tr><td>Domínio tocadoguerreiro.com.br<small>Registro.br, R$ 40 por ano</small></td><td>R$ 3,33/mês</td></tr>
+        <tr><td>Hospedagem e banco de dados<small>Planos grátis no piloto</small></td><td>R$ 0</td></tr>
+        <tr><td>WhatsApp oficial (Meta)<small>~150 agendamentos × 4 mensagens</small></td><td>~R$ 26/mês</td></tr>
+        <tr class="sum"><td>Total estimado</td><td>~R$ 30/mês</td></tr>
+      </table>
+    </div>
+    <div>
+      <span class="mono tag">Material gráfico (gráfica, uma vez)</span>
+      <table class="cost">
+        <tr><td>2 displays de balcão em acrílico</td><td>R$ 70–120</td></tr>
+        <tr><td>Banner em lona 0,8 × 1,2 m</td><td>R$ 60–110</td></tr>
+        <tr><td>1.000 panfletos A6</td><td>R$ 120–220</td></tr>
+        <tr class="sum"><td>Total estimado</td><td>R$ 250–450</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="year">
+    <div><span class="mono">Primeiro ano completo do piloto</span><p>Implantação + 12 meses de manutenção + serviços de terceiros (~R$ 30/mês).</p></div>
+    <b id="yearTotal"><small id="yearMonth"></small></b>
+  </div>
+  <p class="note">Serviços de terceiros estimados em novembro de 2026, com dólar a R$ 5,50; podem variar com o câmbio e são confirmados antes do início.</p>
+</section>
+
+<!-- 11 PRÓXIMOS PASSOS -->
+<section class="page">
+  <span class="mono tag">10 — Próximos passos</span>
+  <h2>Bora pro <span class="red">tatame?</span></h2>
+  <ol class="next">
+    <li><b>Aprovar a proposta</b><span>Plano Piloto: Cruzeiro e Santa Lúcia.</span></li>
+    <li><b>Mandar horários, fotos e professores</b><span>De cada turma, nas duas unidades.</span></li>
+    <li><b>Escolher o número de WhatsApp</b><span>O que envia as mensagens e o que recebe o aviso.</span></li>
+    <li><b>Verificar a conta na Meta</b><span>Eu acompanho o passo a passo com vocês.</span></li>
+    <li><b>Em 3 semanas, no ar</b><span>E no fim do primeiro mês, o primeiro relatório.</span></li>
+  </ol>
+  <div class="sign">
+    <div class="sig"><i></i><b>Toca do Guerreiro Jiu-Jitsu</b><small>de acordo · data</small></div>
+    <div class="sig"><i></i><b data-p="autor"></b><small data-p="cargo"></small></div>
+  </div>
+  <div class="closing">
+    <img src="img/jf-logo.svg" alt="">
+    <div><b data-p="autor"></b><span data-p="cargo"></span><span class="mono" data-p="contato"></span></div>
+    <span class="oss">OSS.</span>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+(() => {
+  const P = window.PROP;
+  const brl = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 0 });
+  document.querySelectorAll('[data-p]').forEach(el => { const v = P[el.dataset.p]; if (v) el.textContent = v; else el.remove(); });
+  document.querySelectorAll('[data-money]').forEach(el => el.textContent = brl(P[el.dataset.money]));
+  // rodapé de cada página
+  const pages = [...document.querySelectorAll('.page')];
+  pages.forEach((pg, i) => {
+    if (i === 0) return;
+    const f = document.createElement('footer'); f.className = 'pfoot';
+    f.innerHTML = `<span class="pf-me"><img src="img/jf-logo.svg" alt="">${P.autor} · Proposta Toca do Guerreiro</span><span class="mono">${String(i + 1).padStart(2, '0')} / ${String(pages.length).padStart(2, '0')}</span>`;
+    pg.appendChild(f);
+  });
+  const yt = P.implantacao + 12 * P.manutencao + 12 * 30;
+  const yb = document.getElementById('yearTotal');
+  if (yb) yb.firstChild ? yb.insertBefore(document.createTextNode(brl(yt)), yb.firstChild) : 0;
+  const ym = document.getElementById('yearMonth'); if (ym) ym.textContent = 'equivale a ' + brl(Math.round(yt / 12)) + ' por mês';
+  if (window.QRCode) document.querySelectorAll('[data-qr]').forEach(el => new QRCode(el, {
+    text: 'https://josefrancisco-alt.github.io/toca-do-guerreiro/agendar.html?origem=' + el.dataset.qr,
+    width: 200, height: 200, colorDark: '#0a0a0b', colorLight: '#ffffff', correctLevel: QRCode.CorrectLevel.M }));
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+/* ===== HOME — efeitos no estilo do site do Manoel ===== */
+
+/* temas por seção: a cor nova sobe como cortina */
+body.page-home{background:transparent;transition:color .6s var(--ease)}
+.page-home[data-theme="ink"]{--bg:#0a0a0b;--bg2:#131315;--bg3:#1a1a1d;--fg:#f4f1ea;--mute:#8d8a85;--line:#2a2a2e}
+.page-home[data-theme="paper"]{--bg:#f1eee7;--bg2:#e6e2d9;--bg3:#dcd7cc;--fg:#0a0a0b;--mute:#5c5850;--line:#d3cdc1}
+.page-home[data-theme="red"]{--bg:#e3141b;--bg2:rgba(0,0,0,.14);--bg3:rgba(0,0,0,.2);--fg:#fff;--mute:rgba(255,255,255,.78);--line:rgba(255,255,255,.3)}
+.page-home[data-theme="red"] .red{color:#0a0a0b}
+.bg-base,.bg-wipe{position:fixed;inset:0;z-index:-2;background:#0a0a0b}
+.bg-wipe{z-index:-1;clip-path:inset(100% 0 0 0)}
+.bg-wipe.from-top{clip-path:inset(0 0 100% 0)}
+.bg-wipe.go{clip-path:inset(0 0 0 0);transition:clip-path .8s var(--ease)}
+.page-home .section,.page-home .stats,.page-home .wins,.page-home .final,.page-home .footer{background:transparent}
+
+/* nav sempre escura, legível em qualquer tema */
+.page-home .nav{color:#f4f1ea}
+.page-home .nav-links a{color:#a9a59e}
+.page-home .nav-links a:hover{color:#fff}
+
+/* títulos com fonte variável que engrossa no scroll */
+.title{font-weight:var(--wght,880);font-stretch:calc(var(--wdth,130) * 1%);transition:color .6s}
+
+/* botão escuro (sobre vermelho) */
+.btn-dark{background:#0a0a0b;color:#fff}
+.btn-dark::before{content:"";position:absolute;inset:0;background:#fff;transform:translateY(101%);transition:transform .45s var(--ease);z-index:-1;border-radius:inherit}
+.btn-dark:hover{color:#0a0a0b}
+.btn-dark:hover::before{transform:none}
+
+/* ---------- HERO ---------- */
+.xhero{height:190vh;position:relative}
+.xhero-sticky{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:100px var(--gut) clamp(150px,19vh,190px)}
+.xhero .hero-kicker{position:absolute;top:110px;left:var(--gut);z-index:2}
+.xhero-name{position:relative;z-index:2;font-weight:900;text-transform:uppercase;line-height:.84;letter-spacing:-.035em;font-size:clamp(46px,10.6vw,200px);white-space:nowrap;pointer-events:none}
+.xhero-name>span{display:block;overflow:hidden;will-change:transform}
+.xhero-name .in{display:inline-block;transform:translateY(105%);transition:transform 1.3s var(--ease),font-stretch 1.6s var(--ease);font-stretch:60%}
+.ready .xhero-name .in{transform:none;font-stretch:150%}
+.xl2{text-align:right}
+.xl2 .in{transition-delay:.1s}
+.xl2 em{font-style:normal;color:var(--red)}
+.xl1 .in{color:transparent;-webkit-text-stroke:2px var(--fg)}
+.xhero-emblem{position:absolute;right:7%;top:38%;width:min(27vw,360px);aspect-ratio:1;transform:translate(0,-50%);z-index:1;will-change:transform}
+.xhero-emblem img{width:100%;border-radius:50%;box-shadow:0 30px 120px -20px rgba(227,20,27,.55);opacity:0;transform:scale(.6) rotate(-40deg);transition:opacity 1s var(--ease) .3s,transform 1.4s var(--ease) .3s}
+.ready .xhero-emblem img{opacity:1;transform:none}
+.xhero-emblem .arc{position:absolute;inset:-6%;border-radius:50%;border:3px solid transparent;border-top-color:var(--red);border-right-color:var(--red);animation:spin 5s linear infinite}
+.xhero-foot{position:absolute;left:var(--gut);right:var(--gut);bottom:40px;display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;z-index:2}
+.xhero .hero-sub{max-width:420px}
+.xhero .hero-scroll{z-index:2}
+
+/* faixa entorta com a velocidade */
+.marquee{--skew:0deg;position:relative;z-index:2}
+.marquee span,.marquee em{display:inline-block;transform:skewX(var(--skew));transition:transform .25s}
+
+/* ---------- MANIFESTO ---------- */
+.manifesto{height:230vh;position:relative}
+.mf-sticky{position:sticky;top:0;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:100px var(--gut) 60px;max-width:1300px}
+.mf-text{font-weight:800;font-stretch:115%;font-size:clamp(28px,4.4vw,68px);line-height:1.08;letter-spacing:-.02em}
+.mf-w{opacity:.14;transition:opacity .35s,color .35s}
+.mf-w.on{opacity:1}
+.mf-text b .mf-w.on,.mf-text b.on{color:var(--red)}
+.manifesto .prof{margin-top:40px}
+
+/* ---------- TURMAS: cartões empilhando ---------- */
+.stack{display:grid;gap:28px;padding-bottom:10vh}
+.stack-card{position:sticky;top:calc(96px + var(--i) * 26px);display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(18px,3vw,40px);background:var(--bg2);border:1px solid var(--line);border-radius:28px;padding:clamp(16px,2.4vw,28px);min-height:min(68vh,560px);transform-origin:50% 0;will-change:transform;box-shadow:0 -20px 60px -30px rgba(0,0,0,.8)}
+.stack-art{border-radius:20px;display:grid;place-items:center;overflow:hidden;min-height:260px}
+.stack-art span{font-weight:900;font-stretch:150%;font-size:clamp(56px,9vw,150px);color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.9);transform:rotate(-8deg);transition:transform .9s var(--ease),color .5s}
+.stack-card:hover .stack-art span{transform:rotate(0) scale(1.05);color:#fff}
+.stack-body{display:flex;flex-direction:column;justify-content:flex-end;gap:14px;padding:10px 6px}
+.stack-body .mono{font-size:12px;color:var(--red)}
+.stack-body h3{font-weight:900;font-stretch:125%;font-size:clamp(28px,3.2vw,46px);text-transform:uppercase;line-height:.95}
+.stack-body p{color:var(--mute);font-size:17px;max-width:440px}
+.stack-body .btn{align-self:flex-start;margin-top:8px}
+
+/* ---------- PROFESSORES: carrossel travado ---------- */
+.profs{position:relative;height:var(--px-h,300vh)}
+.profs-sticky{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:30px}
+.profs-head{padding:80px var(--gut) 0;display:grid;grid-template-columns:1fr auto;align-items:end;gap:6px 20px}
+.profs-head .tag{grid-column:1/-1;margin:0}
+.profs-head h2{color:#fff}
+.tag.light,.light{color:rgba(255,255,255,.85)!important}
+.profs-track{display:flex;gap:22px;padding:0 var(--gut);width:max-content;will-change:transform}
+.pcard{width:clamp(250px,24vw,330px);background:#0a0a0b;color:#f4f1ea;border-radius:24px;padding:16px 16px 22px;display:flex;flex-direction:column;gap:10px;flex:0 0 auto;transition:transform .5s var(--ease)}
+.pcard:hover{transform:translateY(-8px) rotate(-1deg)}
+.pcard-photo{aspect-ratio:1/.92;border-radius:16px;background:radial-gradient(circle at 50% 35%,#2b2b30,#121214 70%);display:grid;place-items:center;position:relative;overflow:hidden}
+.pcard-photo .sil{width:70%;fill:#2f2f35;margin-top:auto}
+.lead-card .pcard-photo{background:radial-gradient(circle at 30% 20%,#ff4b51,#7a0a0e 55%,#0a0a0b)}
+.pcard-logo{position:absolute;width:62%;opacity:.25;animation:spin 30s linear infinite}
+.pcard-initials{position:relative;font-weight:900;font-stretch:150%;font-size:96px;color:#fff;letter-spacing:-.04em}
+.belt{height:12px;border-radius:3px;position:relative;margin:4px 0}
+.belt i{position:absolute;right:14%;top:0;bottom:0;width:22%;background:#e3141b}
+.belt.black{background:#1d1d1f;outline:1px solid #333}
+.belt.brown{background:#6b3f22}
+.belt.brown i,.belt.purple i{background:#111}
+.belt.purple{background:#5b2a86}
+.pcard>.mono{font-size:11px;color:#e3141b;text-transform:uppercase}
+.pcard h3{font-weight:900;font-stretch:125%;font-size:24px;text-transform:uppercase;line-height:1}
+.pcard p{color:#9a968f;font-size:14px}
+.pcard-ig{font-size:12px;color:#f4f1ea;margin-top:auto}
+.pcard-ig:hover{color:#e3141b}
+.pcard.join{background:transparent;border:2px dashed rgba(255,255,255,.55);justify-content:center;color:#fff}
+.pcard.join h3{font-size:clamp(48px,5vw,72px);font-stretch:150%}
+.pcard.join>.mono{color:#fff}
+.pcard.join .btn{align-self:flex-start}
+.profs-bar{margin:0 var(--gut);height:2px;background:rgba(255,255,255,.3)}
+.profs-bar i{display:block;height:100%;background:#fff;transform:scaleX(0);transform-origin:left}
+
+/* conquistas no tema claro */
+.page-home .wins{color:var(--fg)}
+.page-home .stat b{color:var(--fg)}
+
+/* ---------- FINAL + RODAPÉ ---------- */
+.page-home .final{background:transparent;min-height:80vh;justify-content:center}
+.page-home .final h2{color:#fff}
+.footer{flex-direction:column;align-items:stretch}
+.footer-big{font-weight:900;font-stretch:150%;font-size:clamp(100px,25vw,420px);line-height:.78;letter-spacing:-.05em;text-align:center;color:transparent;-webkit-text-stroke:2px var(--red);display:flex;justify-content:center;overflow:hidden;padding-top:.05em}
+.footer-big .ch{display:inline-block;transform:translateY(100%);transition:transform 1.1s var(--ease)}
+.footer-big.in .ch{transform:none}
+.footer-big .ch:nth-child(2){transition-delay:.08s;color:var(--red)}
+.footer-big .ch:nth-child(3){transition-delay:.16s}
+.footer-row{display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;margin-top:30px}
+
+/* impacto no clique */
+.impact{position:fixed;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;border:2px solid var(--red);pointer-events:none;z-index:160;animation:impact .6s var(--ease) forwards}
+.impact.b{border-color:currentColor;animation-duration:.8s}
+@keyframes impact{to{transform:scale(6);opacity:0}}
+
+@media (max-width:860px){
+  .xhero{height:150vh}
+  .xhero-emblem{right:-14%;top:38%;width:70vw;opacity:.9}
+  .xhero-name{font-size:clamp(54px,17vw,140px)}
+  .xhero .hero-kicker{top:90px}
+  .stack-card{grid-template-columns:1fr;min-height:0;top:calc(80px + var(--i) * 16px)}
+  .stack-art{min-height:180px}
+  .manifesto{height:200vh}
+  .pcard{width:74vw}
+  .xhero-foot .hero-ctas .btn{width:100%;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  .xhero,.manifesto,.profs{height:auto}
+  .xhero-sticky,.mf-sticky,.profs-sticky{position:relative;height:auto;min-height:100svh}
+  .profs-track{flex-wrap:wrap;width:auto}
+  .mf-w{opacity:1}
+}
+
+.page-home[data-theme="red"] .float-cta{background:#0a0a0b}
+@media (max-width:860px){.xhero-name{font-size:9.6vw}.xhero-sticky{padding-bottom:300px}.xhero-emblem{right:-10%;top:30%;width:62vw}.profs-head{grid-template-columns:1fr}}

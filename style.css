@@ -368,7 +368,7 @@ h3{font-weight:800;font-stretch:115%;font-size:22px;line-height:1.15}
 .book{min-height:100svh;display:grid;grid-template-columns:minmax(300px,.85fr) 1.4fr;gap:clamp(24px,5vw,70px);padding:110px var(--gut) 60px;align-items:start;max-width:1400px;margin:0 auto}
 .book-side{position:sticky;top:110px;display:flex;flex-direction:column;gap:20px}
 .book-emblem{width:90px;animation:spin 14s linear infinite}
-.book-side h1{font-weight:900;font-stretch:140%;font-size:clamp(42px,5.4vw,84px);line-height:.88;text-transform:uppercase;letter-spacing:-.02em}
+.book-side h1{font-weight:900;font-stretch:130%;font-size:clamp(38px,4.3vw,72px);line-height:.88;text-transform:uppercase;letter-spacing:-.02em}
 .perks{list-style:none;display:grid;gap:12px;font-size:15px}
 .perks li{display:flex;gap:12px;align-items:center}
 .perks b{width:24px;height:24px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-size:12px;flex:0 0 auto}
