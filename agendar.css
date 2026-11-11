@@ -1,0 +1,104 @@
+/* Toca do Guerreiro — agendamento da aula experimental */
+.voltar{margin-left:auto;font-size:15px}
+.agenda{display:grid;grid-template-columns:minmax(280px,.8fr) 1.4fr;gap:clamp(28px,5vw,64px);padding-top:48px;padding-bottom:80px;align-items:start}
+.agenda-lado{position:sticky;top:110px;display:flex;flex-direction:column;gap:20px}
+.selo{align-self:flex-start;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;border:2px solid var(--borda);padding:6px 12px;border-radius:var(--raio)}
+.agenda-lado h1{font-size:clamp(48px,5.4vw,80px);line-height:.88}
+.vantagens{list-style:none;display:grid;gap:10px;border-top:2px solid var(--borda);padding-top:18px}
+.vantagens li{padding-left:30px;position:relative;font-weight:600}
+.vantagens li::before{content:"";position:absolute;left:0;top:4px;width:18px;height:10px;border:3px solid var(--f-verde);border-top:0;border-right:0;transform:rotate(-45deg)}
+.origem{font-size:14px;background:var(--branco);border:1px dashed var(--tinta);padding:10px 12px;border-radius:var(--raio)}
+
+.agenda-main{display:grid;gap:28px;justify-items:center}
+.ficha{width:100%;background:var(--branco);border:2px solid var(--borda);border-radius:var(--raio);box-shadow:8px 8px 0 var(--sombra);padding:clamp(20px,3.5vw,36px)}
+.passos{list-style:none;display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;font-size:14px;font-weight:600;color:var(--cinza)}
+.passos li{display:flex;align-items:center;gap:8px;padding-right:12px}
+.passos b{width:26px;height:26px;display:grid;place-items:center;border:2px solid var(--linha);border-radius:50%;font-size:13px}
+.passos li.active{color:var(--tinta)}
+.passos li.active b{border-color:var(--tinta);background:var(--tinta);color:#fff}
+.passos li.done b{border-color:var(--f-verde);background:var(--f-verde);color:#fff}
+.progresso{height:6px;background:var(--papel-2);border-radius:3px;overflow:hidden;margin-bottom:30px}
+.progresso i{display:block;height:100%;width:0;background:var(--vermelho);transition:width .4s}
+
+.panel{display:none}
+.panel.active{display:block;animation:entra .3s ease-out}
+@keyframes entra{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.panel h2{font-size:clamp(30px,3.4vw,42px);margin-bottom:18px}
+.panel h2.mt{margin-top:30px}
+.choices{display:grid;gap:12px}
+.choices.two{grid-template-columns:1fr 1fr}
+.choices.three{grid-template-columns:repeat(3,1fr)}
+.choice{text-align:left;border:2px solid var(--linha);border-radius:var(--raio);padding:18px;display:flex;flex-direction:column;gap:4px;background:var(--papel);transition:border-color .15s,background .15s}
+.choice:hover{border-color:var(--tinta)}
+.choice.sel{border-color:var(--vermelho);background:color-mix(in srgb,var(--vermelho) 18%,transparent);box-shadow:inset 0 0 0 1px var(--vermelho)}
+.choice strong{font:900 30px/1 var(--titulo);text-transform:uppercase}
+.choice small{font-size:14px;color:var(--cinza)}
+.choice-tipo{font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--cinza)}
+.choice .cor{width:56px;height:12px;background:var(--cor);box-shadow:inset 0 0 0 1px rgba(0,0,0,.2);margin-bottom:10px;display:block}
+.aviso{margin-top:18px;font-size:14px;color:var(--cinza)}
+.back{margin-top:22px;font-weight:700;font-size:15px;color:var(--tinta-2)}
+.back:hover{color:var(--vermelho)}
+
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.day{border:2px solid var(--linha);border-radius:var(--raio);padding:10px 4px;display:flex;flex-direction:column;align-items:center;gap:2px;background:var(--papel)}
+.day small{font-size:12px;font-weight:700;text-transform:uppercase;color:var(--cinza)}
+.day b{font:900 28px/1 var(--titulo)}
+.day i{font-style:normal;font-size:11px;color:var(--cinza)}
+.day:hover:not(:disabled){border-color:var(--tinta)}
+.day:disabled{opacity:.35;cursor:not-allowed;background:transparent}
+.day.sel{border-color:var(--vermelho);background:color-mix(in srgb,var(--vermelho) 18%,transparent)}
+.day.hoje small{color:var(--vermelho)}
+.slots{display:flex;flex-wrap:wrap;gap:10px}
+.slot{border:2px solid var(--borda);border-radius:var(--raio);padding:10px 18px;font:900 26px/1 var(--titulo);display:flex;flex-direction:column;align-items:center;gap:4px;background:var(--branco)}
+.slot small{font:600 12px/1 var(--texto);color:var(--vermelho-escuro)}
+.slot:hover{background:var(--tinta);color:#fff}
+.slot:hover small{color:#f5c2c0}
+.slot.full{opacity:.4;pointer-events:none;border-style:dashed}
+.slot.full small{color:var(--cinza)}
+.slot.pre{background:var(--vermelho);border-color:var(--vermelho);color:#fff}
+.slot.pre small{color:#ffe3e1}
+.hint{color:var(--cinza);font-size:15px}
+
+.summary{display:flex;flex-wrap:wrap;gap:8px 20px;padding:14px 16px;background:var(--papel);border-left:4px solid var(--vermelho);margin-bottom:22px;font-size:15px}
+.summary span{color:var(--cinza)}
+.summary b{color:var(--tinta)}
+.form{display:grid;gap:16px}
+.form label{display:grid;gap:6px}
+.form label span{font-weight:700;font-size:14px}
+.form input{font:inherit;padding:14px;border:2px solid var(--linha);border-radius:var(--raio);background:var(--papel)}
+.form input:focus{outline:0;border-color:var(--tinta);background:#fff}
+.form input.err{border-color:var(--vermelho);background:color-mix(in srgb,var(--vermelho) 18%,transparent)}
+.form .btn{justify-self:start}
+.miudo{font-size:13px;color:var(--cinza)}
+
+.done{display:grid;gap:16px;justify-items:start}
+.done-faixa{width:200px;height:26px}
+.done h2{margin:0}
+.done p{font-size:18px;color:var(--tinta-2)}
+.done-ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+
+@media (max-width:900px){
+  .agenda{grid-template-columns:1fr;padding-top:28px}
+  .agenda-lado{position:static}
+  .agenda-lado .nota{display:none}
+}
+@media (max-width:600px){
+  .choices.two,.choices.three{grid-template-columns:1fr}
+  .days{grid-template-columns:repeat(4,1fr)}
+  .ficha{box-shadow:5px 5px 0 var(--sombra)}
+  .form .btn,.done-ctas .btn{width:100%}
+  .voltar{font-size:14px}
+  .marca small{display:none}
+}
+
+/* ---------- IDENTIDADE DA TOCA (tema escuro, Anybody) ---------- */
+.selo,.choice-tipo,.day small,.slot small,.passos{font-family:var(--mono)}
+.agenda-lado h1{font-size:clamp(38px,4.2vw,60px);line-height:.94}
+.panel h2{font-size:clamp(22px,2.4vw,30px)}
+.choice strong{font-size:22px}
+.day b{font-size:21px}
+.slot{font-size:21px}
+.passos li.active b{color:var(--papel)}
+.slot:hover{color:var(--papel)}
+.slot:hover small{color:var(--vermelho)}
+.form input:focus{background:var(--papel-2)}

@@ -1,0 +1,180 @@
+/* Toca do Guerreiro — base do site (home + agendamento) */
+:root{
+  --papel:#0a0a0b;      /* algodão do kimono */
+  --papel-2:#1c1c1f;
+  --branco:#151517;
+  --tinta:#f4f1ea;
+  --tinta-2:#cfcac0;
+  --cinza:#9a968f;
+  --linha:#2c2c30;
+  --vermelho:#e3141b;
+  --vermelho-escuro:#ff5a5f;
+  /* faixas */
+  --f-branca:#f7f5ef; --f-cinza:#8d8f91; --f-amarela:#e8b923; --f-laranja:#e2711d; --f-verde:#2f8a4a;
+  --f-azul:#1f4fa3; --f-roxa:#5d2f86; --f-marrom:#6b4226; --f-preta:#141414;
+  --titulo:"Anybody","Arial Black",Impact,sans-serif;
+  --mono:var(--texto); /* rótulos: mesma fonte do texto, em caixa alta */
+  --borda:#3d3d43;   /* contorno de cartões */
+  --sombra:#e3141b;  /* sombra dura dos cartões */
+  --texto:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --nota:var(--texto);
+  --wrap:1180px;
+  --gut:clamp(16px,4vw,40px);
+  --raio:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--papel);color-scheme:dark;scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--papel);color:var(--tinta);font:400 17px/1.6 var(--texto);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+img,svg{display:block;max-width:100%}
+::selection{background:var(--vermelho);color:#fff}
+:focus-visible{outline:3px solid var(--vermelho);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.red{color:var(--vermelho)}
+.nota{font-family:var(--nota);font-size:20px;line-height:1.3;color:var(--vermelho-escuro)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+h1,h2,h3{font-family:var(--titulo);font-weight:800;line-height:.95;letter-spacing:.005em;text-transform:uppercase}
+h2{font-size:clamp(40px,6vw,76px)}
+h3{font-size:28px;line-height:1}
+.lead{font-size:clamp(18px,1.6vw,21px);line-height:1.55;color:var(--tinta-2);max-width:60ch}
+
+/* ---------- BOTÕES ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:var(--raio);font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent;transition:background .2s,color .2s,border-color .2s,transform .2s;white-space:nowrap}
+.btn:active{transform:translateY(1px)}
+.btn-red{background:var(--vermelho);color:#fff}
+.btn-red:hover{background:var(--vermelho-escuro)}
+.btn-line{border-color:var(--tinta);color:var(--tinta)}
+.btn-line:hover{background:var(--tinta);color:var(--papel)}
+.btn-dark{background:var(--tinta);color:var(--papel)}
+.btn-dark:hover{background:#000}
+.btn-lg{padding:17px 28px;font-size:18px}
+.link{font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;text-decoration-color:var(--vermelho)}
+.link:hover{color:var(--vermelho)}
+
+/* ---------- TOPO ---------- */
+.topo{position:sticky;top:0;z-index:50;background:rgba(10,10,11,.86);backdrop-filter:saturate(1.2) blur(8px);-webkit-backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--linha)}
+.topo-in{display:flex;align-items:center;gap:28px;height:72px}
+.marca{display:flex;align-items:center;gap:12px;text-decoration:none}
+.marca img{width:46px;height:46px}
+.marca b{font-family:var(--titulo);font-weight:900;font-size:22px;line-height:.9;text-transform:uppercase;letter-spacing:.02em}
+.marca small{display:block;font:600 11px/1.2 var(--texto);letter-spacing:.08em;text-transform:uppercase;color:var(--cinza);margin-top:3px}
+.menu{display:flex;gap:22px;margin-left:auto;font-size:15px;font-weight:600}
+.menu a{text-decoration:none;color:var(--tinta-2);padding:6px 0;border-bottom:2px solid transparent}
+.menu a:hover{color:var(--tinta);border-color:var(--vermelho)}
+.topo .btn{padding:11px 18px;font-size:15px}
+.menu-btn{display:none;margin-left:auto;width:44px;height:44px;border:2px solid var(--borda);border-radius:var(--raio);position:relative}
+.menu-btn i{position:absolute;left:10px;right:10px;height:2px;background:var(--tinta);transition:transform .2s}
+.menu-btn i:nth-child(1){top:14px}.menu-btn i:nth-child(2){top:20px}.menu-btn i:nth-child(3){top:26px}
+.menu-btn[aria-expanded="true"] i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] i:nth-child(2){transform:scaleX(0)}
+.menu-btn[aria-expanded="true"] i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media (max-width:1020px){
+  .menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--papel);border-bottom:1px solid var(--linha);padding:8px var(--gut) 18px;margin:0}
+  .menu.aberto{display:flex}
+  .menu a{padding:12px 0;border-bottom:1px solid var(--linha);font-size:18px}
+  .menu-btn{display:block}
+  .topo .btn{display:none}
+}
+
+/* ---------- FAIXA (o elemento da marca) ---------- */
+.faixa{--cor:var(--f-branca);--pont:var(--f-preta);--texto-faixa:#0a0a0b;
+  position:relative;display:flex;align-items:center;height:30px;background:var(--cor);border-radius:2px;
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.14);color:var(--texto-faixa);
+  background-image:repeating-linear-gradient(0deg,transparent 0 5px,rgba(0,0,0,.09) 5px 6px);}
+.faixa::after{content:"";position:absolute;right:0;top:0;bottom:0;width:22%;max-width:110px;min-width:54px;background:var(--pont)}
+.faixa .graus{position:absolute;right:6%;top:0;bottom:0;display:flex;gap:6px;z-index:1}
+.faixa .graus i{width:6px;background:#fff;opacity:.95}
+.faixa-tag{display:inline-flex;width:auto;padding:0 92px 0 14px;margin-bottom:22px}
+.faixa-tag::after{width:64px;min-width:0}
+.faixa-tag span:first-child{font:700 12px/1 var(--texto);letter-spacing:.12em;text-transform:uppercase;position:relative;z-index:1;white-space:nowrap}
+.faixa-tag .graus{right:12px}
+.sec-escura .faixa,.rodape .faixa{box-shadow:inset 0 0 0 1px #4d4943}
+.f-branca{--cor:var(--f-branca)}
+.f-azul{--cor:var(--f-azul);--texto-faixa:#fff}
+.f-roxa{--cor:var(--f-roxa);--texto-faixa:#fff}
+.f-marrom{--cor:var(--f-marrom);--texto-faixa:#fff}
+.f-preta{--cor:var(--f-preta);--pont:var(--vermelho);--texto-faixa:#fff}
+.f-cinza{--cor:var(--f-cinza);--texto-faixa:#fff}
+.f-amarela{--cor:var(--f-amarela)}
+.f-laranja{--cor:var(--f-laranja);--texto-faixa:#fff}
+.f-verde{--cor:var(--f-verde);--texto-faixa:#fff}
+
+/* ---------- CHAT WHATSAPP (agendamento) ---------- */
+.celular{background:#0b141a;border:8px solid #222;border-radius:34px;overflow:hidden;max-width:360px;width:100%;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
+.celular-topo{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#1f2c33;color:#e9edef;font:14px/1.3 system-ui,sans-serif}
+.celular-topo img{width:34px;height:34px;border-radius:50%;background:#fff}
+.celular-topo small{display:block;color:#8696a0;font-size:11px}
+.chat{padding:14px 10px;display:flex;flex-direction:column;gap:10px;font:13.5px/1.4 system-ui,sans-serif;min-height:280px;background:#0b141a}
+.msg{align-self:flex-start;max-width:88%;background:#202c33;color:#e9edef;padding:8px 10px 18px;border-radius:0 10px 10px 10px;white-space:pre-line;position:relative;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
+.msg.show{opacity:1;transform:none}
+.msg .lbl{display:block;font-size:10.5px;font-weight:700;color:#53bdeb;margin-bottom:3px;text-transform:uppercase;letter-spacing:.04em}
+.msg time{position:absolute;right:8px;bottom:4px;font-size:10px;color:#8696a0}
+.msg .btns{display:flex;gap:6px;margin-top:8px}
+.msg .btns span{flex:1;text-align:center;padding:6px;border-radius:6px;background:#2a3942;color:#53bdeb;font-weight:600}
+.typing{align-self:flex-start;background:#202c33;border-radius:10px;padding:10px 12px;display:flex;gap:4px}
+.typing i{width:6px;height:6px;border-radius:50%;background:#8696a0;animation:tp 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tp{0%,100%{opacity:.3}50%{opacity:1}}
+
+/* ---------- RODAPÉ ---------- */
+.rodape{background:var(--tinta);color:#d8d3c8;padding:0 0 28px}
+.rodape .faixa{height:44px;border-radius:0}
+.rodape .faixa::after{width:180px;max-width:none}
+.rodape-in{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px;padding-top:44px}
+.rodape h4{font:700 12px/1 var(--texto);letter-spacing:.12em;text-transform:uppercase;color:#8f8a80;margin-bottom:14px}
+.rodape a{color:#f2eee6;text-decoration:none}
+.rodape a:hover{color:#fff;text-decoration:underline}
+.rodape ul{list-style:none;display:grid;gap:8px;font-size:15px}
+.rodape .marca b{color:#fff}
+.rodape .marca small{color:#8f8a80}
+.rodape-fim{margin-top:40px;padding-top:18px;border-top:1px solid #2c2a27;font-size:13px;color:#8f8a80;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:760px){.rodape-in{grid-template-columns:1fr}}
+
+/* ---------- FAIXA DE PROGRESSO (cresce com o scroll, muda de cor por seção) ---------- */
+.cinto{--pont:var(--f-preta);height:7px;background:var(--papel-2);overflow:hidden}
+.cinto i{display:block;height:100%;min-width:46px;width:0;background:var(--cor);position:relative;transition:background-color .5s;box-shadow:inset 0 -1px 0 rgba(0,0,0,.2)}
+.cinto i::after{content:"";position:absolute;right:0;top:0;bottom:0;width:38px;background:var(--pont);transition:background-color .5s}
+.cinto b{position:absolute;right:6px;top:0;bottom:0;display:flex;gap:3px;z-index:1}
+.cinto u{width:3px;background:#fff}
+
+/* ---------- TRANSIÇÃO ENTRE PÁGINAS (home <-> agendamento) ---------- */
+@media (prefers-reduced-motion:no-preference){
+  @view-transition{navigation:auto}
+  .topo{view-transition-name:topo}
+  ::view-transition-old(root){animation:.22s ease-in both vt-sai}
+  ::view-transition-new(root){animation:.32s ease-out both vt-entra}
+}
+@keyframes vt-sai{to{opacity:0;transform:translateY(-14px)}}
+@keyframes vt-entra{from{opacity:0;transform:translateY(22px)}}
+
+/* =====================================================================
+   IDENTIDADE DA TOCA — preto, vermelho e branco; Anybody nos títulos
+   ===================================================================== */
+input{color:inherit}
+h1,h2,h3{font-weight:900;font-stretch:112%;letter-spacing:-.015em;line-height:.98}
+h2{font-size:clamp(30px,4.6vw,62px)}
+h3{font-size:21px;line-height:1.05}
+.nota{font-style:italic;font-weight:600;font-size:17px;line-height:1.45}
+.marca b{font-size:15px;font-weight:900;font-stretch:125%;letter-spacing:.02em;line-height:1}
+.marca small,.faixa-tag span:first-child,.rodape h4{font-family:var(--mono)}
+
+/* botão: o fundo sobe no hover */
+.btn{position:relative;overflow:hidden;isolation:isolate}
+.btn-red::before{content:"";position:absolute;inset:0;background:var(--tinta);transform:translateY(101%);transition:transform .45s cubic-bezier(.16,1,.3,1);z-index:-1}
+.btn-red:hover{background:var(--vermelho);color:var(--papel)}
+.btn-red:hover::before{transform:none}
+.btn-dark:hover{background:var(--vermelho);color:#fff}
+
+.rodape{background:#0a0a0b;border-top:1px solid var(--linha)}
+.rodape-oss{font:900 30vw/.78 var(--titulo);font-stretch:150%;letter-spacing:-.02em;text-align:center;color:transparent;-webkit-text-stroke:1px #34343a;overflow:hidden;margin-top:36px;user-select:none}
+
+/* a ponta preta da faixa precisa de contorno para aparecer no fundo escuro */
+.faixa::after{box-shadow:inset 0 0 0 1px var(--borda)}
+.marca small{font-size:10px;letter-spacing:.06em}
+
+/* rótulos em caixa alta, sem fonte de máquina de escrever */
+.marca small{font-size:10.5px;font-weight:700;letter-spacing:.1em}
+.faixa-tag span:first-child,.rodape h4{font-weight:700}

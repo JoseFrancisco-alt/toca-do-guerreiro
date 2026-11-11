@@ -1,23 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Redesenho aproximado do emblema da Toca (monograma TG) para o protótipo. Trocar pelo arquivo oficial da academia. -->
   <defs>
-    <path id="top" d="M30,100 a70,70 0 1,1 140,0"/>
-    <path id="bot" d="M18,100 a82,82 0 0,0 164,0"/>
+    <path id="top" d="M27,100 a73,73 0 1,1 146,0"/>
+    <path id="bot" d="M15,100 a85,85 0 0,0 170,0"/>
+    <clipPath id="disco"><circle cx="100" cy="100" r="56"/></clipPath>
   </defs>
-  <circle cx="100" cy="100" r="98" fill="#0a0a0b"/>
-  <circle cx="100" cy="100" r="93" fill="#fff"/>
-  <circle cx="100" cy="100" r="89" fill="none" stroke="#0a0a0b" stroke-width="2.5"/>
-  <text font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="15" fill="#0a0a0b" letter-spacing="1">
+  <circle cx="100" cy="100" r="99" fill="#0a0a0b"/>
+  <circle cx="100" cy="100" r="95" fill="#fff"/>
+  <text font-family="Rockwell, 'Roboto Slab', Georgia, 'Times New Roman', serif" font-weight="900" font-size="17" fill="#0a0a0b" letter-spacing=".5">
     <textPath href="#top" startOffset="50%" text-anchor="middle">TOCA DO GUERREIRO</textPath>
   </text>
-  <text font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="15" fill="#0a0a0b" letter-spacing="2">
-    <textPath href="#bot" startOffset="50%" text-anchor="middle">JIU-JITSU</textPath>
+  <text font-family="Rockwell, 'Roboto Slab', Georgia, 'Times New Roman', serif" font-weight="900" font-size="17" fill="#0a0a0b" letter-spacing="1">
+    <textPath href="#bot" startOffset="50%" text-anchor="middle">JIU - JITSU</textPath>
   </text>
-  <circle cx="22" cy="100" r="3" fill="#e3141b"/>
-  <circle cx="178" cy="100" r="3" fill="#e3141b"/>
-  <circle cx="100" cy="100" r="54" fill="#0a0a0b"/>
-  <path d="M100 46 A54 54 0 0 1 100 154 Z" fill="#e3141b"/>
-  <rect x="70" y="68" width="44" height="13" fill="#fff"/>
-  <rect x="85" y="68" width="13" height="64" fill="#fff"/>
-  <path d="M106 93 h30 v13 h-17 v13 h-13 z" fill="#0a0a0b"/>
-  <circle cx="100" cy="100" r="54" fill="none" stroke="#fff" stroke-width="3"/>
+  <circle cx="19" cy="100" r="4" fill="#0a0a0b"/>
+  <circle cx="181" cy="100" r="4" fill="#0a0a0b"/>
+  <g clip-path="url(#disco)">
+    <rect x="40" y="40" width="120" height="57" fill="#0a0a0b"/>
+    <rect x="40" y="103" width="120" height="60" fill="#e3141b"/>
+    <circle cx="100" cy="100" r="33" fill="#fff"/>
+    <rect x="40" y="97" width="120" height="6" fill="#fff"/>
+    <rect x="91" y="60" width="18" height="76" fill="#0a0a0b"/>
+    <rect x="109" y="103" width="30" height="15" fill="#e3141b"/>
+  </g>
 </svg>

@@ -4,298 +4,577 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Toca do Guerreiro · Jiu-Jitsu</title>
-  <meta name="description" content="Jiu-Jitsu pra criança, pra mulher e pra quem nunca treinou. 5 unidades. Agende sua aula experimental grátis.">
+  <meta name="description" content="Jiu-jitsu para crianças, mulheres e adultos, inclusive quem nunca treinou. 5 unidades. A primeira aula é grátis e o kimono a gente empresta.">
   <meta name="theme-color" content="#0a0a0b">
   <link rel="icon" href="img/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
   <link rel="stylesheet" href="home.css">
 </head>
-<body class="page-home" data-theme="ink">
+<body>
 
-  <div class="bg-base" id="bgBase"></div>
-  <div class="bg-wipe" id="bgWipe"></div>
-
-  <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader-inner">
-      <img src="img/logo.svg" alt="" class="loader-logo">
-      <div class="loader-word"><span>O</span><span>S</span><span>S</span></div>
-      <div class="loader-bar"><i id="loaderFill"></i></div>
-      <div class="loader-count mono"><span id="loaderNum">000</span> / 100</div>
-    </div>
-  </div>
-
-  <div class="cursor" id="cursor"><span id="cursorLabel"></span></div>
-  <div class="cursor-dot" id="cursorDot"></div>
-  <div class="grain" aria-hidden="true"></div>
-
-  <header class="nav" id="nav">
-    <a href="#topo" class="nav-brand" data-cursor="Topo">
-      <img src="img/logo.svg" alt="Toca do Guerreiro">
-      <span>TOCA DO<br>GUERREIRO</span>
+<header class="topo">
+  <div class="wrap topo-in">
+    <a href="#inicio" class="marca">
+      <img src="img/logo.svg" alt="">
+      <span><b>Toca do Guerreiro</b><small>Jiu-jitsu · Prof. Augusto Teodósio</small></span>
     </a>
-    <nav class="nav-links">
-      <a href="#sobre">A Toca</a>
-      <a href="#modalidades">Turmas</a>
-      <a href="#professores">Professores</a>
+    <nav class="menu" id="menu" aria-label="Seções">
+      <a href="#turmas">Turmas</a>
+      <a href="#primeira-aula">Primeira aula</a>
+      <a href="#faixas">Faixas</a>
       <a href="#horarios">Horários</a>
       <a href="#unidades">Unidades</a>
       <a href="#duvidas">Dúvidas</a>
     </nav>
-    <a href="agendar.html" class="btn btn-red magnetic" data-cursor="Bora">Aula grátis</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu"><i></i><i></i></button>
-  </header>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#sobre">A Toca</a>
-    <a href="#modalidades">Turmas</a>
-    <a href="#professores">Professores</a>
-    <a href="#horarios">Horários</a>
-    <a href="#unidades">Unidades</a>
-    <a href="agendar.html" class="red">Aula grátis</a>
+    <a href="agendar.html" class="btn btn-red">Agendar aula grátis</a>
+    <button class="menu-btn" id="menuBtn" aria-controls="menu" aria-expanded="false"><span class="sr">Abrir menu</span><i></i><i></i><i></i></button>
   </div>
+  <div class="cinto" aria-hidden="true"><i id="cinto" class="f-branca"><b id="cintoGraus"></b></i></div>
+</header>
 
-  <main id="topo">
+<main id="inicio">
 
-    <!-- HERO: o nome abre no scroll -->
-    <section class="xhero" id="xhero" data-theme="ink">
-      <div class="xhero-sticky">
-        <p class="hero-kicker mono"><span class="dot"></span> Matrículas abertas · 1ª aula grátis</p>
-        <h1 class="xhero-name" aria-label="Toca do Guerreiro">
-          <span class="xl1" id="heroL1"><span class="in">TOCA DO</span></span>
-          <span class="xl2" id="heroL2"><span class="in">GUER<em>REIRO</em></span></span>
-        </h1>
-        <div class="xhero-emblem" id="heroFace">
-          <span class="arc"></span>
-          <img src="img/logo.svg" alt="">
+  <!-- ABERTURA -->
+  <section class="abertura" data-faixa="branca">
+    <img src="img/logo.svg" alt="" class="emblema" aria-hidden="true">
+    <div class="wrap abertura-in">
+      <div class="abertura-txt">
+        <p class="selo"><i class="pulso"></i>Matrículas abertas · 1ª aula grátis</p>
+        <h1>Nunca<br>treinou?<br><span class="red">Ótimo.</span></h1>
+        <p class="lead">Todo faixa-preta da Toca começou numa aula como a sua: sem saber cair, sem kimono e meio sem graça. A primeira é grátis, o kimono a gente empresta e o professor ensina do zero.</p>
+        <div class="acoes">
+          <a href="agendar.html" class="btn btn-red btn-lg">Agendar minha aula grátis</a>
+          <a href="#primeira-aula" class="btn btn-line btn-lg">Como é a primeira aula</a>
         </div>
-        <div class="xhero-foot">
-          <p class="hero-sub">Jiu-Jitsu pra criança, pra mulher e pra quem nunca pisou num tatame.
-            <strong>A primeira aula é por nossa conta.</strong></p>
-          <div class="hero-ctas">
-            <a href="agendar.html" class="btn btn-red btn-lg magnetic" data-cursor="Agendar">Agendar aula grátis <b>→</b></a>
-            <a href="#modalidades" class="btn btn-ghost magnetic" data-cursor="Ver">Conhecer as turmas</a>
-          </div>
-        </div>
-        <div class="hero-scroll mono">role <i></i></div>
+        <ul class="garantias">
+          <li><b>Sem compromisso</b>Treina, conhece a turma e decide depois.</li>
+          <li><b>Kimono emprestado</b>Na aula experimental você não compra nada.</li>
+          <li><b>Turma por idade</b>Kids, feminina e adulto, cada um no seu ritmo.</li>
+        </ul>
       </div>
-    </section>
 
-    <div class="marquee" id="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>OSS</span><em>✦</em><span>Disciplina</span><em>✦</em><span>Respeito</span><em>✦</em><span>Técnica</span><em>✦</em><span>Família</span><em>✦</em>
-        <span>OSS</span><em>✦</em><span>Disciplina</span><em>✦</em><span>Respeito</span><em>✦</em><span>Técnica</span><em>✦</em><span>Família</span><em>✦</em>
-      </div>
+      <aside class="proximas" aria-labelledby="proxTit">
+        <div class="proximas-topo">
+          <h2 id="proxTit">Próximas aulas com vaga</h2>
+          <p>Para aula experimental, nas unidades com agendamento online.</p>
+        </div>
+        <ol class="proximas-lista" id="proximas"></ol>
+        <a href="#horarios" class="proximas-pe">Ver a grade completa</a>
+      </aside>
     </div>
 
-    <!-- MANIFESTO -->
-    <section class="manifesto" id="sobre" data-theme="paper">
-      <div class="mf-sticky">
-        <span class="mono tag">01 — A Toca</span>
-        <p class="mf-text" id="mfText">Aqui ninguém treina sozinho. Quem entra na <b>Toca</b> vira parte do time — do <b>kids</b> que tá aprendendo a cair até o faixa-preta voltando de campeonato. <b>Disciplina</b>, <b>respeito</b> e <b>evolução</b>, no seu tempo. Oss.</p>
-        <div class="prof">
-          <div class="prof-badge"><img src="img/logo.svg" alt=""></div>
-          <div><b>Prof. Augusto Teodósio</b><small class="mono">@augustoteodosioo · responsável técnico</small></div>
+    <div class="faixa faixa-abertura f-branca" aria-hidden="true">
+      <span class="graus"></span>
+    </div>
+    <p class="wrap nota faixa-legenda">Role a página: ela vai da faixa branca à preta, como o seu treino. ↓</p>
+  </section>
+
+  <!-- PLACAR: quanto vale cada posição -->
+  <section class="placar" aria-labelledby="placarTit">
+    <div class="wrap placar-in">
+      <div class="placar-cab">
+        <p class="olho">O placar de uma luta</p>
+        <h2 id="placarTit">Quanto vale cada posição</h2>
+        <p>Você vai ouvir esses nomes já na primeira semana de treino.</p>
+      </div>
+      <ol class="placar-lista">
+        <li><b>2</b><strong>Queda</strong><span>Derrubar e ficar por cima</span></li>
+        <li><b>2</b><strong>Raspagem</strong><span>Sair de baixo e inverter</span></li>
+        <li><b>2</b><strong>Joelho na barriga</strong><span>Controlar por cima com o joelho</span></li>
+        <li><b>3</b><strong>Passagem de guarda</strong><span>Vencer as pernas do oponente</span></li>
+        <li><b>4</b><strong>Montada</strong><span>Sentar sobre o tronco</span></li>
+        <li><b>4</b><strong>Pegada pelas costas</strong><span>Controlar por trás com os ganchos</span></li>
+        <li class="fim"><b>Fim</b><strong>Finalização</strong><span>O oponente bate e a luta acaba</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="sec-clara manifesto" id="a-toca">
+    <div class="wrap">
+      <div class="mf">
+        <div class="mf-lado">
+          <p class="olho">A Toca · Escola de lutas</p>
+          <h2>Aqui ninguém<br>treina sozinho.</h2>
+          <p class="lead">Quem entra na Toca vira parte do time: do kids que está aprendendo a cair ao faixa-preta voltando de campeonato. Cada um evolui no seu tempo, e todo mundo puxa todo mundo.</p>
+          <div class="assina"><img src="img/logo.svg" alt=""><div><b>Prof. Augusto Teodósio</b><small>@augustoteodosioo · responsável técnico</small></div></div>
         </div>
-      </div>
-    </section>
-
-    <section class="stats" data-theme="paper">
-      <div class="stat reveal"><b data-count="5">0</b><span>unidades pra treinar perto de casa</span></div>
-      <div class="stat reveal"><b data-count="3">0</b><span>turmas: kids, feminina e adulto</span></div>
-      <div class="stat reveal"><b data-count="3" data-suffix="º">0</b><span>lugar por equipes no campeonato</span></div>
-      <div class="stat reveal"><b>1ª</b><span>aula experimental grátis</span></div>
-    </section>
-
-    <!-- TURMAS: cartões empilhando -->
-    <section class="section" id="modalidades" data-theme="ink">
-      <div class="section-head">
-        <span class="mono tag">02 — Turmas</span>
-        <h2 class="title">Um tatame.<br><span class="red">Três turmas.</span></h2>
-      </div>
-      <div class="stack">
-        <article class="stack-card" style="--i:0" data-cursor="Kids">
-          <div class="stack-art art-kids"><span>KIDS</span></div>
-          <div class="stack-body">
-            <span class="mono">K/01 · 4 a 13 anos</span>
-            <h3>Infantil / Kids</h3>
-            <p>Coordenação, foco e confiança. Criança que aprende a cair aprende a levantar — dentro e fora do tatame. Turma com campeões no pódio.</p>
-            <a href="agendar.html?mod=kids" class="btn btn-red">Agendar aula Kids <b>→</b></a>
+        <div class="costas">
+          <div class="patches" role="list" aria-label="Os valores da Toca">
+            <span class="patch p-logo" role="listitem"><img src="img/logo.svg" alt="Toca do Guerreiro"></span>
+            <span class="patch p-branco" role="listitem">Disciplina</span>
+            <span class="patch p-verm" role="listitem">Respeito</span>
+            <span class="patch p-preto" role="listitem">Evolução</span>
+            <span class="patch p-redondo" role="listitem">Oss</span>
+            <span class="patch p-verm p-lema" role="listitem">Mais que uma academia, uma família</span>
           </div>
-        </article>
-        <article class="stack-card" style="--i:1" data-cursor="Elas">
-          <div class="stack-art art-fem"><span>ELAS</span></div>
-          <div class="stack-body">
-            <span class="mono">F/02 · só mulheres</span>
-            <h3>Turma Feminina</h3>
-            <p>Ambiente só de mulheres, ritmo respeitado e defesa pessoal de verdade. Chega sozinha, sai com um time.</p>
-            <a href="agendar.html?mod=feminino" class="btn btn-red">Agendar aula Feminina <b>→</b></a>
-          </div>
-        </article>
-        <article class="stack-card" style="--i:2" data-cursor="Adulto">
-          <div class="stack-art art-adu"><span>ADULTO</span></div>
-          <div class="stack-body">
-            <span class="mono">A/03 · a partir de 14</span>
-            <h3>Adulto</h3>
-            <p>Do iniciante ao competidor. Condicionamento, técnica e aquela cabeça leve depois do treino. Turmas de manhã e à noite.</p>
-            <a href="agendar.html?mod=adulto" class="btn btn-red">Agendar aula Adulto <b>→</b></a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- PROFESSORES: carrossel travado -->
-    <section class="profs" id="professores" data-theme="red">
-      <div class="profs-sticky">
-        <div class="profs-head">
-          <span class="mono tag light">03 — Professores</span>
-          <h2 class="title">Quem te<br>ensina.</h2>
-          <p class="mono small light">Role pra conhecer o time →</p>
+          <small class="costas-leg">O que a gente costura no kimono</small>
         </div>
-        <div class="profs-track" id="profsTrack">
-          <article class="pcard lead-card" data-cursor="Mestre">
-            <div class="pcard-photo">
-              <img src="img/logo.svg" alt="" class="pcard-logo">
-              <span class="pcard-initials">AT</span>
-            </div>
-            <div class="belt black"><i></i></div>
-            <span class="mono">Responsável técnico · Matriz</span>
-            <h3>Prof. Augusto Teodósio</h3>
-            <p>Fundador da Toca. Comanda a metodologia de todas as unidades e as turmas de competição.</p>
-            <a href="https://instagram.com/augustoteodosioo" target="_blank" rel="noopener" class="mono pcard-ig">@augustoteodosioo ↗</a>
-          </article>
-          <article class="pcard" data-cursor="Cruzeiro">
-            <div class="pcard-photo"><svg viewBox="0 0 100 100" class="sil"><circle cx="50" cy="36" r="18"/><path d="M14 100c0-22 16-36 36-36s36 14 36 36z"/></svg></div>
-            <div class="belt brown"><i></i></div>
-            <span class="mono">CT Cruzeiro · Adulto</span>
-            <h3>Nome do professor</h3>
-            <p>Turmas da manhã e da noite. Foco em base, passagem de guarda e condicionamento.</p>
-          </article>
-          <article class="pcard" data-cursor="Elas">
-            <div class="pcard-photo"><svg viewBox="0 0 100 100" class="sil"><circle cx="50" cy="36" r="18"/><path d="M14 100c0-22 16-36 36-36s36 14 36 36z"/></svg></div>
-            <div class="belt purple"><i></i></div>
-            <span class="mono">Turma Feminina</span>
-            <h3>Nome da professora</h3>
-            <p>Técnica, defesa pessoal e um ambiente onde toda mulher se sente em casa.</p>
-          </article>
-          <article class="pcard" data-cursor="Kids">
-            <div class="pcard-photo"><svg viewBox="0 0 100 100" class="sil"><circle cx="50" cy="36" r="18"/><path d="M14 100c0-22 16-36 36-36s36 14 36 36z"/></svg></div>
-            <div class="belt black"><i></i></div>
-            <span class="mono">Kids · Cruzeiro e Santa Lúcia</span>
-            <h3>Nome do professor</h3>
-            <p>Brincadeira com propósito: coordenação, respeito e os primeiros pódios.</p>
-          </article>
-          <article class="pcard" data-cursor="S. Lúcia">
-            <div class="pcard-photo"><svg viewBox="0 0 100 100" class="sil"><circle cx="50" cy="36" r="18"/><path d="M14 100c0-22 16-36 36-36s36 14 36 36z"/></svg></div>
-            <div class="belt brown"><i></i></div>
-            <span class="mono">Filial Santa Lúcia</span>
-            <h3>Nome do professor</h3>
-            <p>Responsável pela unidade. Turmas de iniciantes e graduados.</p>
-          </article>
-          <article class="pcard join" data-cursor="Treinar">
-            <span class="mono">Seu lugar no tatame</span>
-            <h3>Falta<br>você.</h3>
-            <a href="agendar.html" class="btn btn-dark">Agendar aula grátis <b>→</b></a>
-          </article>
-        </div>
-        <div class="profs-bar"><i id="profsBar"></i></div>
       </div>
-    </section>
-
-    <!-- CONQUISTAS -->
-    <section class="wins" data-theme="paper">
-      <div class="wins-track">
-        <div class="win reveal"><b>3º</b><span>lugar por equipes no campeonato</span></div>
-        <div class="win reveal"><b>🥇</b><span>pódios na turma Kids</span></div>
-        <div class="win reveal"><b>5</b><span>unidades na cidade</span></div>
-        <div class="win reveal"><b>OSS</b><span>aulões abertos na praça</span></div>
-      </div>
-    </section>
-
-    <!-- HORÁRIOS -->
-    <section class="section" id="horarios" data-theme="paper">
-      <div class="section-head">
-        <span class="mono tag">04 — Horários</span>
-        <h2 class="title">Tem horário<br><span class="red">pra você.</span></h2>
-      </div>
-      <div class="sched reveal">
-        <div class="sched-tabs seg" id="schedTabs">
-          <button class="on" data-u="cruzeiro">Cruzeiro</button>
-          <button data-u="santalucia">Santa Lúcia</button>
-        </div>
-        <div class="sched-table" id="schedTable"></div>
-        <p class="mono small">Demais unidades: fale com a recepção.</p>
-      </div>
-    </section>
-
-    <!-- DEPOIMENTOS -->
-    <section class="section quotes" data-theme="ink">
-      <div class="section-head">
-        <span class="mono tag">05 — Quem treina</span>
-        <h2 class="title">Quem entra<br><span class="red">não sai.</span></h2>
-      </div>
-      <div class="quote-grid">
-        <figure class="quote reveal"><blockquote>“Meu filho era tímido demais. Seis meses de Kids e ele mesmo pede pra ir treinar.”</blockquote><figcaption class="mono">Mãe de aluno · Kids</figcaption></figure>
-        <figure class="quote reveal"><blockquote>“Fui na aula grátis morrendo de vergonha. Hoje a turma feminina é meu lugar favorito da semana.”</blockquote><figcaption class="mono">Aluna · Turma Feminina</figcaption></figure>
-        <figure class="quote reveal"><blockquote>“Comecei com 38 anos, fora de forma. Perdi 12 kg e ganhei uma família.”</blockquote><figcaption class="mono">Aluno · Adulto</figcaption></figure>
-      </div>
-      <p class="mono small" style="margin-top:18px">Depoimentos de exemplo no protótipo — entram os reais dos alunos.</p>
-    </section>
-
-    <!-- UNIDADES -->
-    <section class="section" id="unidades" data-theme="ink">
-      <div class="section-head">
-        <span class="mono tag">06 — Unidades</span>
-        <h2 class="title">Tem uma Toca<br><span class="red">perto de você.</span></h2>
-      </div>
-      <ul class="units">
-        <li class="unit live reveal"><span class="mono">@tocactcruzeiro</span><b>Cruzeiro</b><a href="agendar.html?unidade=cruzeiro" class="unit-cta">Agendar online →</a></li>
-        <li class="unit live reveal"><span class="mono">Filial</span><b>Santa Lúcia</b><a href="agendar.html?unidade=santalucia" class="unit-cta">Agendar online →</a></li>
-        <li class="unit reveal"><span class="mono">Matriz</span><b>Graciliano Ramos</b><em>Fale com a recepção</em></li>
-        <li class="unit reveal"><span class="mono">Filial</span><b>Aeroporto</b><em>Fale com a recepção</em></li>
-        <li class="unit reveal"><span class="mono">Filial</span><b>Santa Amélia</b><em>Fale com a recepção</em></li>
+      <ul class="numeros">
+        <li><b data-count="5">5</b><span>unidades pra treinar perto de casa</span></li>
+        <li><b data-count="3">3</b><span>turmas: kids, feminina e adulto</span></li>
+        <li><b data-count="3" data-suf="º">3º</b><span>lugar por equipes no campeonato</span></li>
+        <li><b>1ª</b><span>aula experimental grátis</span></li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <!-- FAQ -->
-    <section class="section" id="duvidas" data-theme="paper">
-      <div class="section-head">
-        <span class="mono tag">07 — Dúvidas</span>
-        <h2 class="title">Antes da<br><span class="red">primeira aula.</span></h2>
-      </div>
-      <div class="faq">
-        <details class="reveal"><summary>Preciso ter experiência?</summary><p>Não. A aula experimental é feita pra quem nunca treinou. O professor adapta tudo pro seu nível.</p></details>
-        <details class="reveal"><summary>O que eu levo?</summary><p>Roupa leve (bermuda e camiseta), garrafinha de água e chinelo. Se não tiver kimono, a gente empresta na aula experimental.</p></details>
-        <details class="reveal"><summary>A aula grátis tem compromisso?</summary><p>Nenhum. Você treina, conhece a turma e decide depois se quer se matricular.</p></details>
-        <details class="reveal"><summary>Com que idade a criança pode começar?</summary><p>A turma Kids recebe crianças a partir de 4 anos, divididas por idade e tamanho.</p></details>
-        <details class="reveal"><summary>A turma feminina é só de mulheres?</summary><p>Sim. Treino só entre mulheres, com foco em técnica, condicionamento e defesa pessoal.</p></details>
-      </div>
-    </section>
+  <!-- TURMAS -->
+  <section class="sec" id="turmas" data-faixa="branca">
+    <div class="wrap">
+      <header class="sec-cab">
+        <p class="olho">Turmas</p>
+        <h2>Uma turma pra cada<br>fase da vida.</h2>
+        <p class="lead">Ninguém treina com quem não deve. Criança treina com criança, mulher pode treinar só entre mulheres e o adulto iniciante começa do básico.</p>
+      </header>
 
-    <section class="final" data-theme="red">
-      <h2 class="title">O primeiro passo<br>é entrar na Toca.</h2>
-      <a href="agendar.html" class="btn btn-dark btn-xl magnetic" data-cursor="OSS">Agendar aula grátis <b>→</b></a>
-    </section>
-  </main>
+      <div class="turmas">
+        <article class="turma" id="t-kids">
+          <div class="turma-topo f-amarela"><span>Kids</span><small>4 a 13 anos</small></div>
+          <div class="turma-corpo">
+            <h3>Infantil</h3>
+            <p>Brincadeira com propósito: coordenação, equilíbrio, foco e respeito. Criança que aprende a cair aprende a levantar.</p>
+            <dl>
+              <dt>Trabalha</dt><dd>Coordenação, disciplina, autoconfiança e defesa contra bullying, sem incentivar briga.</dd>
+              <dt>Quando</dt><dd data-quando="kids"></dd>
+            </dl>
+            <div class="pais">
+              <b>Pra quem é pai ou mãe</b>
+              <p>As crianças são divididas por idade e tamanho, o professor acompanha o treino o tempo todo e você pode assistir à aula experimental da arquibancada.</p>
+            </div>
+            <a href="agendar.html?mod=kids" class="btn btn-dark">Agendar aula Kids</a>
+          </div>
+        </article>
 
-  <footer class="footer" data-theme="ink">
-    <div class="footer-big" id="footerBig" aria-hidden="true">OSS</div>
-    <div class="footer-row">
-      <div class="footer-brand"><img src="img/logo.svg" alt=""><span>TOCA DO GUERREIRO<br><small class="mono">Jiu-Jitsu · Prof. Augusto Teodósio</small></span></div>
-      <div class="footer-links mono">
-        <a href="https://instagram.com/tocadoguerreirobjj" target="_blank" rel="noopener">Instagram @tocadoguerreirobjj</a>
-        <a href="https://instagram.com/tocactcruzeiro" target="_blank" rel="noopener">@tocactcruzeiro</a>
-        <a href="agendar.html">Agendar aula grátis</a>
+        <article class="turma" id="t-fem">
+          <div class="turma-topo f-roxa"><span>Feminina</span><small>a partir de 14 anos</small></div>
+          <div class="turma-corpo">
+            <h3>Só mulheres</h3>
+            <p>Treino entre mulheres, com professora, ritmo respeitado e defesa pessoal que funciona contra alguém maior e mais forte.</p>
+            <dl>
+              <dt>Trabalha</dt><dd>Defesa pessoal, condicionamento, técnica e confiança.</dd>
+              <dt>Quando</dt><dd data-quando="feminino"></dd>
+            </dl>
+            <p class="nota">“Chega sozinha, sai com um time.”</p>
+            <a href="agendar.html?mod=feminino" class="btn btn-dark">Agendar aula Feminina</a>
+          </div>
+        </article>
+
+        <article class="turma" id="t-adu">
+          <div class="turma-topo f-azul"><span>Adulto</span><small>a partir de 14 anos</small></div>
+          <div class="turma-corpo">
+            <h3>Iniciante ao competidor</h3>
+            <p>A turma recebe quem nunca treinou e quem compete. Na primeira semana você aprende o básico; o treino forte vem quando você estiver pronto.</p>
+            <dl>
+              <dt>Trabalha</dt><dd>Condicionamento, técnica, controle do peso e aquela cabeça leve depois do treino.</dd>
+              <dt>Quando</dt><dd data-quando="adulto"></dd>
+            </dl>
+            <p class="nota">Tem turma às 6h30 pra quem só pode antes do trabalho.</p>
+            <a href="agendar.html?mod=adulto" class="btn btn-dark">Agendar aula Adulto</a>
+          </div>
+        </article>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <a href="agendar.html" class="float-cta" data-cursor="Grátis">Aula grátis <b>→</b></a>
+  <!-- FAIXA BRANCA: O QUE É -->
+  <section class="sec sec-clara" id="o-que-e" data-faixa="branca">
+    <div class="wrap">
+      <header class="sec-cab">
+        <div class="faixa faixa-tag f-branca"><span>Faixa branca · O começo</span><span class="graus"></span></div>
+        <h2>Jiu-jitsu é xadrez<br>com o corpo.</h2>
+        <p class="lead">É uma luta de chão: em vez de soco e chute, você aprende a controlar a outra pessoa com alavancas e posições. Por isso o menor consegue vencer o maior e todo mundo consegue treinar sem se machucar.</p>
+      </header>
 
-  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-  <script src="data.js"></script>
-  <script src="script.js"></script>
-  <script src="home.js"></script>
+      <div class="lab">
+        <article class="alav">
+          <h3>Alavanca vence força</h3>
+          <p>Mova o apoio e veja quanta força você precisa fazer para levantar um parceiro de 90 kg.</p>
+          <svg viewBox="0 0 400 200" class="alav-fig" role="img" aria-label="Alavanca: um peso de 90 kg numa ponta, você na outra e um apoio no meio">
+            <line x1="10" y1="172" x2="390" y2="172" stroke="currentColor" stroke-width="3"/>
+            <path id="alavApoio" d="M-18 172 L18 172 L0 134 Z" fill="var(--vermelho)"/>
+            <g id="alavBarra">
+              <line x1="40" y1="130" x2="360" y2="130" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+              <rect x="22" y="82" width="46" height="44" rx="4" fill="currentColor"/>
+              <text x="45" y="110" text-anchor="middle" class="alav-peso">90</text>
+              <circle cx="348" cy="112" r="14" fill="none" stroke="currentColor" stroke-width="5"/>
+              <line id="alavSeta" x1="348" y1="40" x2="348" y2="84" stroke="var(--vermelho)" stroke-width="6" stroke-linecap="round"/>
+              <path d="M338 76 L348 90 L358 76" fill="none" stroke="var(--vermelho)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="348" y="30" text-anchor="middle" class="alav-voce" id="alavVoce">você</text>
+            </g>
+          </svg>
+          <label class="alav-ctrl">
+            <span class="sr">Posição do apoio</span>
+            <input type="range" id="alavRange" min="74" max="200" value="150" step="1">
+            <span class="alav-pontas"><i>apoio perto do peso</i><i>apoio longe do peso</i></span>
+          </label>
+          <p class="alav-res" aria-live="polite">Você faz a força de <output id="alavKg">45 kg</output></p>
+          <p class="alav-nota">No tatame, o apoio é o seu quadril. Quanto mais perto do peso do parceiro você encaixa, menos força precisa.</p>
+        </article>
+
+        <div class="lab-lado">
+          <article class="bate">
+            <h3>Bateu, parou</h3>
+            <p>Quando uma posição aperta, você dá três tapinhas no parceiro ou no chão e ele solta na hora. É a regra mais importante do tatame. Treine aqui:</p>
+            <button type="button" class="bate-btn" id="bateBtn">
+              <span class="bate-pontos" aria-hidden="true"><i></i><i></i><i></i></span>
+              <b id="bateTxt" aria-live="polite">Bata 3 vezes aqui</b>
+            </button>
+          </article>
+          <article class="dupla">
+            <h3>Com o parceiro, não contra</h3>
+            <p>Você treina em dupla. O parceiro ajuda você a aprender a técnica, depois você ajuda ele. Treino não é briga, e quem machuca o parceiro fica sem ter com quem treinar.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="porques">
+        <h3>Por que as pessoas começam</h3>
+        <ul>
+          <li><b>Defesa pessoal</b><span>Você aprende a sair de baixo de alguém maior, que é onde a maioria das brigas termina.</span></li>
+          <li><b>Condicionamento</b><span>Uma hora de treino cansa como uma corrida, mas você nem percebe, porque está aprendendo.</span></li>
+          <li><b>Cabeça</b><span>Por uma hora você só pensa no que está fazendo. Muita gente vem pela ansiedade e fica pelo resto.</span></li>
+          <li><b>Amizade</b><span>Você treina sempre com as mesmas pessoas. Em pouco tempo a turma vira um time.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAIXA AZUL: PRIMEIRA AULA -->
+  <section class="sec" id="primeira-aula" data-faixa="azul">
+    <div class="wrap">
+      <header class="sec-cab">
+        <div class="faixa faixa-tag f-azul"><span>Faixa azul · A primeira aula</span><span class="graus"></span></div>
+        <h2>Seus primeiros<br>60 minutos no tatame.</h2>
+        <p class="lead">Ninguém joga você no treino forte. A aula experimental segue o mesmo roteiro de toda aula, com o professor de olho em você. Toque em cada parte para ver o que acontece.</p>
+      </header>
+
+      <div class="aula-ctrl">
+        <button class="btn btn-dark" id="aulaPlay" type="button"><span class="play" aria-hidden="true"></span><span id="aulaPlayTxt">Simular a aula em 20 segundos</span></button>
+        <span class="aula-min" id="aulaMin" aria-live="off"></span>
+      </div>
+      <div class="aula">
+        <i class="aula-fill" id="aulaFill" aria-hidden="true"></i>
+        <div class="aula-barra" role="tablist" aria-label="Partes da aula" id="aulaBarra">
+          <button role="tab" style="--min:10" data-p="0" aria-selected="true"><b>Chegada</b><small>10 min</small></button>
+          <button role="tab" style="--min:15" data-p="1" aria-selected="false"><b>Aquecimento</b><small>15 min</small></button>
+          <button role="tab" style="--min:20" data-p="2" aria-selected="false"><b>Técnica</b><small>20 min</small></button>
+          <button role="tab" style="--min:10" data-p="3" aria-selected="false"><b>Treino</b><small>10 min</small></button>
+          <button role="tab" style="--min:5" data-p="4" aria-selected="false"><b>Fim</b><small>5 min</small></button>
+        </div>
+        <div class="aula-quadro" id="aulaQuadro" role="tabpanel" aria-live="polite"></div>
+      </div>
+
+      <div class="levar">
+        <div class="levar-txt">
+          <h3>O que levar</h3>
+          <p>Marque o que já separou. A lista fica salva neste aparelho.</p>
+        </div>
+        <ul class="levar-lista" id="levar">
+          <li><label><input type="checkbox" value="roupa"><span><b>Roupa leve</b>Bermuda sem bolso com zíper e camiseta. Mulheres: legging e top.</span></label></li>
+          <li><label><input type="checkbox" value="agua"><span><b>Garrafa de água</b>Com nome. Você vai precisar.</span></label></li>
+          <li><label><input type="checkbox" value="chinelo"><span><b>Chinelo</b>Ninguém pisa no tatame calçado, e ninguém sai dele descalço.</span></label></li>
+          <li><label><input type="checkbox" value="unhas"><span><b>Unhas cortadas</b>Das mãos e dos pés. Protege você e o parceiro.</span></label></li>
+          <li><label><input type="checkbox" value="acessorios"><span><b>Sem brinco, anel e relógio</b>Tudo que pode enroscar fica na bolsa.</span></label></li>
+          <li><label><input type="checkbox" value="cedo"><span><b>Chegar 10 min antes</b>Pra pegar o kimono emprestado e conhecer o professor.</span></label></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAIXA ROXA: FAIXAS -->
+  <section class="sec sec-clara" id="faixas" data-faixa="roxa">
+    <div class="wrap">
+      <header class="sec-cab">
+        <div class="faixa faixa-tag f-roxa"><span>Faixa roxa · A graduação</span><span class="graus"></span></div>
+        <h2>O que cada<br>cor quer dizer.</h2>
+        <p class="lead">A faixa mostra quanto tempo e quanta técnica você acumulou. Entre uma cor e outra existem os <b>graus</b>: listras brancas na ponta preta, que o professor dá conforme você evolui.</p>
+      </header>
+
+      <div class="faixas">
+        <div class="faixas-escolha">
+          <div class="seg" role="tablist" aria-label="Tipo de graduação" id="faixasTipo">
+            <button role="tab" aria-selected="true" data-t="adulto">Adulto</button>
+            <button role="tab" aria-selected="false" data-t="kids">Kids</button>
+          </div>
+          <div class="faixas-cores" id="faixasCores" role="tablist" aria-label="Faixas"></div>
+        </div>
+
+        <div class="faixas-ver">
+          <div class="faixa faixa-grande" id="faixaGrande"><span class="graus" id="faixaGraus"></span></div>
+          <div class="graus-ctrl">
+            <span>Graus:</span>
+            <div class="seg pequeno" id="grausCtrl">
+              <button aria-pressed="true" data-g="0">0</button><button aria-pressed="false" data-g="1">1</button><button aria-pressed="false" data-g="2">2</button><button aria-pressed="false" data-g="3">3</button><button aria-pressed="false" data-g="4">4</button>
+            </div>
+          </div>
+          <div class="faixa-info" id="faixaInfo" aria-live="polite"></div>
+        </div>
+      </div>
+
+      <div class="sim">
+        <div class="sim-txt">
+          <h3>Quanto tempo até a sua faixa?</h3>
+          <p>Mexa nos controles e veja uma estimativa. Quem treina mais vezes por semana evolui mais rápido.</p>
+        </div>
+        <div class="sim-ctrl">
+          <label class="sim-vezes">
+            <span>Treinando <output id="simVezesTxt">3 vezes</output> por semana</span>
+            <input type="range" id="simVezes" min="1" max="6" step="1" value="3">
+          </label>
+          <div class="sim-alvo">
+            <span>Até a faixa</span>
+            <div class="seg pequeno" id="simAlvo" role="tablist" aria-label="Faixa desejada">
+              <button role="tab" aria-selected="true" data-a="1">Azul</button><button role="tab" aria-selected="false" data-a="2">Roxa</button><button role="tab" aria-selected="false" data-a="3">Marrom</button><button role="tab" aria-selected="false" data-a="4">Preta</button>
+            </div>
+          </div>
+        </div>
+        <div class="sim-res" aria-live="polite">
+          <p class="sim-num" id="simNum"></p>
+          <p class="sim-frase" id="simFrase"></p>
+          <div class="sim-linha" id="simLinha"></div>
+        </div>
+      </div>
+      <p class="rodape-sec">Tempos médios de referência. Quem decide a graduação é o professor, olhando técnica, frequência e atitude.</p>
+    </div>
+  </section>
+
+  <!-- FAIXA MARROM: GLOSSÁRIO -->
+  <section class="sec" id="glossario" data-faixa="marrom">
+    <div class="wrap">
+      <header class="sec-cab cab-linha">
+        <div>
+          <div class="faixa faixa-tag f-marrom"><span>Faixa marrom · A língua do tatame</span><span class="graus"></span></div>
+          <h2>Pra não ficar<br>perdido na aula.</h2>
+        </div>
+        <label class="busca">
+          <span class="sr">Procurar palavra</span>
+          <input type="search" id="glossBusca" placeholder="Procurar palavra" autocomplete="off">
+        </label>
+      </header>
+
+      <dl class="glossario" id="glossario">
+        <div><dt>Oss</dt><dd>Cumprimento do tatame. Serve pra “oi”, “entendi”, “obrigado” e “bora”.</dd></div>
+        <div><dt>Kimono</dt><dd>A roupa do treino, também chamada de <i>gi</i>. Tem calça, casaco e faixa.</dd></div>
+        <div><dt>Tatame</dt><dd>O piso emborrachado onde se treina. Entra descalço, sai de chinelo.</dd></div>
+        <div><dt>Grau</dt><dd>Listra branca na ponta da faixa. Mostra a evolução entre uma cor e outra.</dd></div>
+        <div><dt>Guarda</dt><dd>Quando você está de costas no chão, mas com as pernas entre você e o parceiro. É uma posição de defesa e de ataque.</dd></div>
+        <div><dt>Passar a guarda</dt><dd>Vencer as pernas de quem está na guarda e chegar ao lado do corpo dele.</dd></div>
+        <div><dt>Raspagem</dt><dd>Sair de baixo e ficar por cima, usando as pernas e o desequilíbrio.</dd></div>
+        <div><dt>Montada</dt><dd>Sentado sobre o tronco do parceiro. Uma das posições mais fortes do jiu-jitsu.</dd></div>
+        <div><dt>Finalização</dt><dd>Uma chave ou estrangulamento que faz o parceiro bater. Sempre com controle.</dd></div>
+        <div><dt>Bater</dt><dd>Dar três tapinhas pra avisar que a posição apertou. Bateu, o parceiro solta.</dd></div>
+        <div><dt>Drill</dt><dd>Repetir a mesma técnica várias vezes com o parceiro, sem resistência.</dd></div>
+        <div><dt>Rola</dt><dd>O treino livre do fim da aula. Iniciante rola leve, com o professor perto.</dd></div>
+      </dl>
+      <p class="glossario-vazio" id="glossVazio" hidden>Nenhuma palavra encontrada. Pergunta pro professor na aula, ele adora explicar.</p>
+    </div>
+  </section>
+
+  <!-- FAIXA PRETA: PROFESSORES -->
+  <section class="sec sec-escura" id="professores" data-faixa="preta">
+    <div class="wrap">
+      <header class="sec-cab">
+        <div class="faixa faixa-tag f-preta"><span>Faixa preta · Quem ensina</span><span class="graus"></span></div>
+        <h2>Os professores<br>da Toca.</h2>
+        <p class="lead">Mesma metodologia em todas as unidades, definida pelo Prof. Augusto. Cada turma tem um professor responsável que conhece cada aluno pelo nome.</p>
+      </header>
+
+      <div class="profs">
+        <article class="prof prof-chefe">
+          <div class="prof-foto"><img src="img/logo.svg" alt=""><span>Foto do professor</span></div>
+          <div class="prof-txt">
+            <div class="faixa f-preta faixa-mini"><span class="graus"><i></i><i></i></span></div>
+            <h3>Prof. Augusto Teodósio</h3>
+            <p class="prof-papel">Fundador e responsável técnico</p>
+            <p>Comanda a metodologia de todas as unidades e as turmas de competição.</p>
+            <a href="https://instagram.com/augustoteodosioo" target="_blank" rel="noopener" class="link">@augustoteodosioo</a>
+          </div>
+        </article>
+        <article class="prof">
+          <div class="prof-foto"><span>Foto</span></div>
+          <div class="prof-txt">
+            <div class="faixa f-marrom faixa-mini"><span class="graus"></span></div>
+            <h3>Nome do professor</h3>
+            <p class="prof-papel">Adulto · Cruzeiro</p>
+            <p>Turmas da manhã e da noite. Foco em base e passagem de guarda.</p>
+          </div>
+        </article>
+        <article class="prof">
+          <div class="prof-foto"><span>Foto</span></div>
+          <div class="prof-txt">
+            <div class="faixa f-roxa faixa-mini"><span class="graus"></span></div>
+            <h3>Nome da professora</h3>
+            <p class="prof-papel">Turma Feminina</p>
+            <p>Técnica e defesa pessoal num ambiente onde toda mulher se sente em casa.</p>
+          </div>
+        </article>
+        <article class="prof">
+          <div class="prof-foto"><span>Foto</span></div>
+          <div class="prof-txt">
+            <div class="faixa f-preta faixa-mini"><span class="graus"></span></div>
+            <h3>Nome do professor</h3>
+            <p class="prof-papel">Kids · Cruzeiro e Santa Lúcia</p>
+            <p>Brincadeira com propósito e os primeiros pódios da garotada.</p>
+          </div>
+        </article>
+        <article class="prof">
+          <div class="prof-foto"><span>Foto</span></div>
+          <div class="prof-txt">
+            <div class="faixa f-marrom faixa-mini"><span class="graus"></span></div>
+            <h3>Nome do professor</h3>
+            <p class="prof-papel">Responsável · Santa Lúcia</p>
+            <p>Turmas de iniciantes e graduados.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HORÁRIOS -->
+  <section class="sec" id="horarios">
+    <div class="wrap">
+      <header class="sec-cab cab-linha">
+        <div>
+          <p class="olho">Horários</p>
+          <h2>Escolha o seu<br>horário.</h2>
+        </div>
+        <div class="seg" role="tablist" aria-label="Unidade" id="gradeUnid">
+          <button role="tab" aria-selected="true" data-u="cruzeiro">Cruzeiro</button>
+          <button role="tab" aria-selected="false" data-u="santalucia">Santa Lúcia</button>
+        </div>
+      </header>
+      <div class="grade-caixa">
+        <table class="grade" id="grade"></table>
+      </div>
+      <ol class="grade-cel" id="gradeCel"></ol>
+      <p class="rodape-sec">Toque num horário para agendar a aula grátis nele. Hoje aparece destacado. Demais unidades: fale com a recepção.</p>
+    </div>
+  </section>
+
+  <!-- UNIDADES -->
+  <section class="sec sec-clara" id="unidades">
+    <div class="wrap">
+      <header class="sec-cab">
+        <p class="olho">Unidades</p>
+        <h2>Cinco Tocas<br>pela cidade.</h2>
+      </header>
+      <ul class="unidades">
+        <li class="unid">
+          <span class="unid-tipo">CT</span>
+          <h3>Cruzeiro</h3>
+          <p>Endereço a confirmar · <a class="link" href="https://instagram.com/tocactcruzeiro" target="_blank" rel="noopener">@tocactcruzeiro</a></p>
+          <a href="agendar.html?unidade=cruzeiro" class="btn btn-red">Agendar aqui</a>
+        </li>
+        <li class="unid">
+          <span class="unid-tipo">Filial</span>
+          <h3>Santa Lúcia</h3>
+          <p>Endereço a confirmar</p>
+          <a href="agendar.html?unidade=santalucia" class="btn btn-red">Agendar aqui</a>
+        </li>
+        <li class="unid">
+          <span class="unid-tipo">Matriz</span>
+          <h3>Graciliano Ramos</h3>
+          <p>Endereço a confirmar</p>
+          <span class="unid-breve">Agendamento online em breve</span>
+        </li>
+        <li class="unid">
+          <span class="unid-tipo">Filial</span>
+          <h3>Aeroporto</h3>
+          <p>Endereço a confirmar</p>
+          <span class="unid-breve">Agendamento online em breve</span>
+        </li>
+        <li class="unid">
+          <span class="unid-tipo">Filial</span>
+          <h3>Santa Amélia</h3>
+          <p>Endereço a confirmar</p>
+          <span class="unid-breve">Agendamento online em breve</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="sec" id="alunos">
+    <div class="wrap">
+      <header class="sec-cab">
+        <p class="olho">Quem treina</p>
+        <h2>Começaram como você.</h2>
+      </header>
+      <div class="depos">
+        <figure><blockquote>Meu filho era tímido demais. Seis meses de Kids e ele mesmo pede pra ir treinar.</blockquote><figcaption>Mãe de aluno · Kids</figcaption></figure>
+        <figure><blockquote>Fui na aula grátis morrendo de vergonha. Hoje a turma feminina é meu lugar favorito da semana.</blockquote><figcaption>Aluna · Feminina</figcaption></figure>
+        <figure><blockquote>Comecei com 38 anos, fora de forma. Perdi 12 kg e ganhei uma turma de amigos.</blockquote><figcaption>Aluno · Adulto</figcaption></figure>
+      </div>
+      <p class="rodape-sec">Depoimentos de exemplo no protótipo. Na versão final entram os dos alunos.</p>
+    </div>
+  </section>
+
+  <!-- DÚVIDAS -->
+  <section class="sec sec-clara" id="duvidas">
+    <div class="wrap duvidas-in">
+      <header class="sec-cab">
+        <p class="olho">Dúvidas</p>
+        <h2>Antes da<br>primeira aula.</h2>
+        <p class="lead">Não achou sua dúvida? Mande uma mensagem pelo Instagram <a class="link" href="https://instagram.com/tocadoguerreirobjj" target="_blank" rel="noopener">@tocadoguerreirobjj</a>.</p>
+      </header>
+      <div class="faq">
+        <details><summary>Preciso estar em forma pra começar?</summary><p>Não. O condicionamento vem com o treino. Na primeira aula o professor ajusta o ritmo pra você e você pode parar pra respirar quando quiser.</p></details>
+        <details><summary>Vou me machucar?</summary><p>O jiu-jitsu é uma das lutas mais seguras pra começar: não tem soco nem chute, e toda posição para quando você bate. Iniciante não faz treino livre pesado.</p></details>
+        <details><summary>A aula grátis tem compromisso?</summary><p>Nenhum. Você treina, conhece a turma e decide depois se quer se matricular.</p></details>
+        <details><summary>Preciso comprar kimono?</summary><p>Não pra aula experimental: a gente empresta. Se decidir continuar, a recepção ajuda você a escolher o tamanho certo.</p></details>
+        <details><summary>Com que idade a criança pode começar?</summary><p>A partir de 4 anos. As turmas são divididas por idade e tamanho, e os pais podem assistir à primeira aula.</p></details>
+        <details><summary>A turma feminina é só de mulheres?</summary><p>Sim. Treino só entre mulheres, com professora. Quem quiser também pode treinar na turma adulta mista.</p></details>
+        <details><summary>Tenho 40, 50 anos. Ainda dá?</summary><p>Dá. Muita gente começa depois dos 40. O professor adapta os exercícios e você treina com parceiros do seu nível.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAMADA FINAL -->
+  <section class="final">
+    <div class="wrap final-in">
+      <h2>A faixa preta começa<br>com uma aula grátis.</h2>
+      <p>Escolha a unidade, a turma e o horário. Leva menos de um minuto e a confirmação chega no seu WhatsApp.</p>
+      <a href="agendar.html" class="btn btn-red btn-lg">Agendar minha aula grátis</a>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="faixa f-preta" aria-hidden="true"><span class="graus"><i></i><i></i><i></i><i></i></span></div>
+  <div class="wrap rodape-in">
+    <div>
+      <a href="#inicio" class="marca"><img src="img/logo.svg" alt=""><span><b>Toca do Guerreiro</b><small>Jiu-jitsu · Prof. Augusto Teodósio</small></span></a>
+    </div>
+    <div>
+      <h4>Instagram</h4>
+      <ul>
+        <li><a href="https://instagram.com/tocadoguerreirobjj" target="_blank" rel="noopener">@tocadoguerreirobjj</a></li>
+        <li><a href="https://instagram.com/tocactcruzeiro" target="_blank" rel="noopener">@tocactcruzeiro</a></li>
+        <li><a href="https://instagram.com/augustoteodosioo" target="_blank" rel="noopener">@augustoteodosioo</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Aula experimental</h4>
+      <ul>
+        <li><a href="agendar.html">Agendar aula grátis</a></li>
+        <li><a href="#primeira-aula">Como é a primeira aula</a></li>
+        <li><a href="#horarios">Horários</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="rodape-oss" aria-hidden="true">OSS</div>
+  <div class="wrap rodape-fim"><span>Toca do Guerreiro · Mais que uma academia, uma família.</span><span>Protótipo: horários, vagas, endereços e nomes de professores são ilustrativos.</span></div>
+</footer>
+
+<a href="agendar.html" class="barra-cel">Agendar aula grátis</a>
+
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script src="home.js"></script>
 </body>
 </html>
