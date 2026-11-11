@@ -583,7 +583,7 @@
   background:
     linear-gradient(180deg,rgba(10,10,11,.55) 0%,rgba(10,10,11,0) 22%,rgba(10,10,11,0) 62%,#0a0a0b 100%),
     linear-gradient(90deg,#0a0a0b 0%,rgba(10,10,11,.92) 30%,rgba(10,10,11,.35) 68%,rgba(10,10,11,.15) 100%),
-    url(img/hero.jpg) 70% 30%/cover no-repeat}
+    url(../img/hero.jpg) 70% 30%/cover no-repeat}
 .emblema{right:-60px;top:40px;width:min(680px,58vw);opacity:.2;z-index:0}
 .abertura-in{display:block}
 .abertura-txt{min-height:calc(min(100svh,920px) - 80px);display:flex;flex-direction:column;justify-content:flex-end;padding:40px 0 44px;max-width:860px}
@@ -622,7 +622,7 @@
 @media (max-width:680px){
   .abertura::before{background:
     linear-gradient(180deg,rgba(10,10,11,.5) 0%,rgba(10,10,11,.2) 30%,#0a0a0b 78%),
-    url(img/hero.jpg) 60% 20%/cover no-repeat}
+    url(../img/hero.jpg) 60% 20%/cover no-repeat}
   .abertura-txt{padding-bottom:28px}
   .abertura h1{font-size:clamp(46px,14vw,64px)}
   .emblema{right:-90px;top:30px;bottom:auto;width:340px}
@@ -633,8 +633,8 @@
 
 /* fotos reais do Instagram da Toca nas turmas */
 #t-fem .turma-topo,#t-adu .turma-topo{color:#fff;min-height:210px;align-items:flex-end;text-shadow:0 2px 14px rgba(0,0,0,.6)}
-#t-fem .turma-topo{background:linear-gradient(180deg,rgba(10,10,11,.15),rgba(10,10,11,.05) 45%,rgba(10,10,11,.8)),url(img/fotos/fem-a.jpg) 50% 38%/cover}
-#t-adu .turma-topo{background:linear-gradient(180deg,rgba(10,10,11,.15),rgba(10,10,11,.05) 45%,rgba(10,10,11,.8)),url(img/hero.jpg) 80% 72%/cover}
+#t-fem .turma-topo{background:linear-gradient(180deg,rgba(10,10,11,.15),rgba(10,10,11,.05) 45%,rgba(10,10,11,.8)),url(../img/fotos/fem-a.jpg) 50% 38%/cover}
+#t-adu .turma-topo{background:linear-gradient(180deg,rgba(10,10,11,.15),rgba(10,10,11,.05) 45%,rgba(10,10,11,.8)),url(../img/hero.jpg) 80% 72%/cover}
 #t-fem .turma-topo,#t-adu .turma-topo{box-shadow:inset 0 -8px 0 var(--cor)}
 /* Kids: quando tiver foto, copie a regra do #t-fem trocando o arquivo por img/fotos/kids.jpg */
 #t-kids .turma-topo{position:relative;overflow:hidden;color:#0a0a0b;min-height:210px;align-items:flex-end;background:repeating-linear-gradient(-45deg,rgba(10,10,11,.06) 0 16px,transparent 16px 32px),var(--f-amarela)}
@@ -645,5 +645,5 @@
 @media (max-width:680px){
   .abertura::before{background:
     linear-gradient(180deg,rgba(10,10,11,.55) 0%,rgba(10,10,11,.55) 18%,rgba(10,10,11,.88) 42%,#0a0a0b 70%),
-    url(img/hero.jpg) 60% 20%/cover no-repeat}
+    url(../img/hero.jpg) 60% 20%/cover no-repeat}
 }
