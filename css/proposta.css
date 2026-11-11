@@ -236,3 +236,4 @@ td{padding:3mm 2mm;border-bottom:1px solid var(--line);vertical-align:top}
 
 /* páginas fora do PDF: tire a classe "fora" da <section> pra voltar com ela */
 .page.fora{display:none}
+.split:has(> :only-child){grid-template-columns:1fr}

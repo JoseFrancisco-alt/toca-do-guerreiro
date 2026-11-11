@@ -7,7 +7,7 @@ Protótipo **visual** (sem back-end) do site da Toca do Guerreiro Jiu-Jitsu e pr
 |---|---|
 | `index.html` | Site da academia: abertura, turmas, primeira aula, faixas, professores, horários, unidades, dúvidas |
 | `agendar.html` | Agendamento da aula grátis. Aceita `?unidade=`, `?mod=` e `?origem=balcao\|aulao\|instagram` |
-| `proposta.html` → `Proposta-Toca-do-Guerreiro.pdf` | Proposta de venda em PDF (4 páginas A4; outras 7 escondidas com a classe `fora`) |
+| `proposta.html` → `Proposta-Toca-do-Guerreiro.pdf` | Proposta de venda em PDF (4 páginas A4: solução, o site, captação e investimento; as outras 7 ficam escondidas com a classe `fora`) |
 
 ## Pastas
 ```
