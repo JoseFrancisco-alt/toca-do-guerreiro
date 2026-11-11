@@ -233,3 +233,6 @@ td{padding:3mm 2mm;border-bottom:1px solid var(--line);vertical-align:top}
 .year b{font-weight:900;font-stretch:130%;font-size:22pt;color:#fff;text-align:right;line-height:1}
 .year b small{display:block;font-size:8pt;font-weight:500;color:#9a968f;font-stretch:100%}
 .page.dark .note{margin-top:0}
+
+/* páginas fora do PDF: tire a classe "fora" da <section> pra voltar com ela */
+.page.fora{display:none}

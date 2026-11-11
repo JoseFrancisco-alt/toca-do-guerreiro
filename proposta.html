@@ -28,7 +28,7 @@
 <body>
 
 <!-- 01 CAPA -->
-<section class="page cover dark">
+<section class="page fora cover dark">
   <header class="cv-top">
     <div class="me"><img src="img/jf-logo.svg" alt=""><div><b data-p="autor"></b><small data-p="cargo"></small></div></div>
     <span class="mono">Proposta comercial · nº <span data-p="numero"></span></span>
@@ -48,7 +48,7 @@
 </section>
 
 <!-- 02 APRESENTAÇÃO -->
-<section class="page">
+<section class="page fora">
   <span class="mono tag">01 — Apresentação</span>
   <h2>Oss, Prof. Augusto.</h2>
   <div class="letter">
@@ -74,7 +74,7 @@
 </section>
 
 <!-- 03 DIAGNÓSTICO -->
-<section class="page">
+<section class="page fora">
   <span class="mono tag">02 — Como é hoje</span>
   <h2>Onde o aluno <span class="red">se perde.</span></h2>
   <p class="lead">O interesse existe. O problema é o caminho até a primeira aula.</p>
@@ -130,7 +130,7 @@
 </section>
 
 <!-- 05 O SITE -->
-<section class="page">
+<section class="page fora">
   <span class="mono tag">04 — Peça 1 · O site</span>
   <h2>Com a <span class="red">cara da Toca.</span></h2>
   <p class="lead">Feito sob medida pra Toca. Em vez de efeito bonito, o site <b>tira as dúvidas que seguram o aluno em casa</b>: como é a aula, o que levar, o que é cada faixa. A página vai da faixa branca à preta, como o treino.</p>
@@ -151,7 +151,7 @@
 </section>
 
 <!-- 06 AGENDAMENTO -->
-<section class="page">
+<section class="page fora">
   <span class="mono tag">05 — Peça 2 · Agendamento</span>
   <h2>Quatro toques<br>até o <span class="red">tatame.</span></h2>
   <div class="steps4">
@@ -212,7 +212,7 @@
 </section>
 
 <!-- 08 CAPTAÇÃO -->
-<section class="page">
+<section class="page fora">
   <span class="mono tag">07 — Captação</span>
   <h2>Do panfleto<br><span class="red">pro tatame.</span></h2>
   <p class="lead">Cada canal ganha um QR Code próprio. Todos levam pro mesmo agendamento — e a Toca passa a saber qual divulgação traz aluno.</p>
@@ -255,7 +255,7 @@
 </section>
 
 <!-- 10 INVESTIMENTO -->
-<section class="page dark">
+<section class="page fora dark">
   <span class="mono tag">09 — Investimento</span>
   <h2>Quanto custa.</h2>
   <div class="price-grid">
@@ -289,19 +289,7 @@
         <tr class="sum"><td>Total estimado</td><td>~R$ 30/mês</td></tr>
       </table>
     </div>
-    <div>
-      <span class="mono tag">Material gráfico (gráfica, uma vez)</span>
-      <table class="cost">
-        <tr><td>2 displays de balcão em acrílico</td><td>R$ 70–120</td></tr>
-        <tr><td>Banner em lona 0,8 × 1,2 m</td><td>R$ 60–110</td></tr>
-        <tr><td>1.000 panfletos A6</td><td>R$ 120–220</td></tr>
-        <tr class="sum"><td>Total estimado</td><td>R$ 250–450</td></tr>
-      </table>
-    </div>
-  </div>
-  <div class="year">
-    <div><span class="mono">Primeiro ano completo do piloto</span><p>Implantação + 12 meses de manutenção + serviços de terceiros (~R$ 30/mês).</p></div>
-    <b id="yearTotal"><small id="yearMonth"></small></b>
+    
   </div>
   <p class="note">Serviços de terceiros estimados em novembro de 2026, com dólar a R$ 5,50; podem variar com o câmbio e são confirmados antes do início.</p>
 </section>
@@ -336,9 +324,12 @@
   document.querySelectorAll('[data-p]').forEach(el => { const v = P[el.dataset.p]; if (v) el.textContent = v; else el.remove(); });
   document.querySelectorAll('[data-money]').forEach(el => el.textContent = brl(P[el.dataset.money]));
   // rodapé de cada página
-  const pages = [...document.querySelectorAll('.page')];
+  const pages = [...document.querySelectorAll('.page:not(.fora)')];
+  // numera as seções (01, 02…) só entre as páginas que entram no PDF
+  let sec = 0;
+  pages.forEach(pg => { const t = [...pg.querySelectorAll('.tag')].find(x => /^\d{2} — /.test(x.textContent)); if (t) t.textContent = t.textContent.replace(/^\d{2}/, String(++sec).padStart(2, '0')); });
   pages.forEach((pg, i) => {
-    if (i === 0) return;
+    if (pg.classList.contains('cover')) return;
     const f = document.createElement('footer'); f.className = 'pfoot';
     f.innerHTML = `<span class="pf-me"><img src="img/jf-logo.svg" alt="">${P.autor} · Proposta Toca do Guerreiro</span><span class="mono">${String(i + 1).padStart(2, '0')} / ${String(pages.length).padStart(2, '0')}</span>`;
     pg.appendChild(f);
